@@ -72,7 +72,9 @@ python --version
 brew install coreutils
 ```
 
-## 5. Disable mouse acceleration
+## 5. Mouse settings
+
+### Disable mouse acceleration
 Reading current value
 ```shell
 defaults read .GlobalPreferences com.apple.scrollwheel.scaling
@@ -85,28 +87,4 @@ defaults write .GlobalPreferences com.apple.scrollwheel.scaling -1
 ## 6. Shell
  - terminal: iTerm, color preset: Solarized Light 
  - shell: ZSH + oh-my-zsh
- - theme: Agnoster (official, not from oh-my-zsh)
-
-### Agnoster Theme with Git user display
-Agnoster which comes from oh-my-zsh differs a bit from Agnoster from it's official repo.
- 1. copy `agnoster.zsh-theme` from https://github.com/agnoster/agnoster-zsh-theme into `$ZSH_CUSTOM/themes` folder. Rename it to `agnoster-custom.zsh-theme`
- 2. in `~/.zshrc` choose custom agnoster theme:`ZSH_THEME="agnoster-custom"`
- 3. append to `~/.zshrc` following code to make it display Git user.name set in the current repo
-
-```shell
-# agnoster-custom functions
-prompt_git_user() {
-        local user="$(git config --get user.name)"
-        if [[ "$user" != "" && "$user" != "$DEFAULT_USER" ]]; then
-                prompt_segment red $PRIMARY_FG " $user  "
-        else
-                prompt_segment yellow $PRIMARY_FG " $user "
-        fi
-}
-PROMPT_SEGMENT_POSITION=5
-PROMPT_SEGMENT_NAME="prompt_git_user";
-
-AGNOSTER_PROMPT_SEGMENTS=("${AGNOSTER_PROMPT_SEGMENTS[@]:0:$PROMPT_SEGMENT_POSITION-1}" "$PROMPT_SEGMENT_NAME" "${AGNOSTER_PROMPT_SEGMENTS[@]:$PROMPT_SEGMENT_POSITION-1}");
-
-unset PROMPT_SEGMENT_POSITION PROMPT_SEGMENT_NAME
-```
+ - theme: agnoster.rzarajczyk (https://github.com/rzarajczyk/agnoster-zsh-theme)

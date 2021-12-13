@@ -1,6 +1,6 @@
 # My favorite MacOS initial setup
 
-## 1. Buttons Home, End, Page Up i Page Down - like on Windows
+## Buttons Home, End, Page Up i Page Down - like on Windows
 
 `~/Library/KeyBindings/DefaultKeyBinding.dict`
 ```shell
@@ -23,7 +23,7 @@ bindkey '\e[H'    beginning-of-line
 bindkey '\e[F'    end-of-line
 ```
 
-## 2. Polish characters like on Windows + switch tilde and paragraph
+## Polish characters like on Windows + switch tilde and paragraph
 `~/Library/LaunchAgents/pl.allegro.KeyRemappings.plist`
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -51,7 +51,12 @@ bindkey '\e[F'    end-of-line
 </dict>
 </plist>
 ```
-## 3. Python installation
+## Homebrew & coreutils installation
+```shell
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"  ## from https://brew.sh/index_pl
+brew install coreutils
+```
+## Python installation
 ```shell
 
 # docs: https://github.com/pyenv/pyenv#basic-github-checkout
@@ -65,14 +70,7 @@ pyenv install 3.10.0
 # verify
 python --version
 ```
-
-## 4. Homebrew & coreutils installation
-```shell
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"  ## from https://brew.sh/index_pl
-brew install coreutils
-```
-
-## 5. Mouse settings
+## Mouse settings
 
 ### Disable mouse acceleration
 Reading current value
@@ -84,7 +82,7 @@ Disabling
 defaults write .GlobalPreferences com.apple.scrollwheel.scaling -1
 ```
 
-## 6. Shell
+## Shell
  - terminal: iTerm, color preset: Solarized Light 
  - shell: ZSH + oh-my-zsh
- - theme: agnoster.rzarajczyk (https://github.com/rzarajczyk/agnoster-zsh-theme)
+ - theme: agnoster.rzarajczyk [https://github.com/rzarajczyk/agnoster-zsh-theme](https://github.com/rzarajczyk/agnoster-zsh-theme)

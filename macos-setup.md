@@ -72,7 +72,7 @@ python --version
 ```
 ## Mouse settings
 
-### Disable mouse acceleration
+### Disable mouse scroll acceleration
 Reading current value
 ```shell
 defaults read .GlobalPreferences com.apple.scrollwheel.scaling

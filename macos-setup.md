@@ -58,6 +58,11 @@ where:
 * `0x700000064` - button `§`
 * `0x700000035` - button `~` (tilde)
 
+## Key repeatting on long key press
+```shell
+defaults write -g ApplePressAndHoldEnabled -bool false
+```
+
 ## Homebrew & coreutils installation
 ```shell
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"  ## from https://brew.sh/index_pl

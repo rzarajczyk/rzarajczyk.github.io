@@ -51,6 +51,13 @@ bindkey '\e[F'    end-of-line
 </dict>
 </plist>
 ```
+where:
+
+* `0x7000000e7` - right Cmmand
+* `0x7000000e6` - right Option
+* `0x700000064` - button `§`
+* `0x700000035` - button `~` (tilde)
+
 ## Homebrew & coreutils installation
 ```shell
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"  ## from https://brew.sh/index_pl
@@ -67,6 +74,8 @@ echo 'eval "$(pyenv init -)"' >> ~/.zshrc
 pyenv install --list
 # choose newest, np. 3.10.0
 pyenv install 3.10.0
+# use it
+pyenv global 3.10.0
 # verify
 python --version
 ```

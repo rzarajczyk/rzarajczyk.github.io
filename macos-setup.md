@@ -84,6 +84,12 @@ pyenv global 3.10.0
 # verify
 python --version
 ```
+
+## Disable "drag to top" opening Mission Controll
+
+Go to `System Preferences` > `Mission Control`
+Uncheck "Displays have separate Spaces" then log out and back in again.
+
 ## Mouse settings
 
 ### Disable mouse scroll acceleration

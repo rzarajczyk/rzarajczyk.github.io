@@ -1,3 +1,3 @@
 # rzarajczyk.github.io
 
-Sources of the http://rzarajczyk.github.io webpage
+Rafal Zarajczyk, [zarajczyk.pl](https://zarajczyk.pl)

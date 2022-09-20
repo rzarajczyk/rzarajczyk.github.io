@@ -1,3 +1,4 @@
+* [Java and Search Conferences in 2022](conferences-2022.md)
 * [Interesting online tools](interesting-online-tools.md)
 * [Getting memory statistics from command line in MacOS](macos-memory-statistics.md)
 * [My favorite MacOS initial setup](macos-setup.md)

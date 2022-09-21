@@ -1,6 +1,8 @@
 Note: the lists below are far from being complete :-)
 
-# JVM related conferences in 2022
+# JVM related conferences
+
+### 2022
 
 [geecon Kraków](https://2022.geecon.org/) - May 11-13, Kraków, paid
 
@@ -10,7 +12,9 @@ Note: the lists below are far from being complete :-)
 
 [Code Europe Warszawa](https://www.codeeurope.pl/) - June 2nd, Warsaw, paid
 
-[Confitura](https://2022.confitura.pl/about) - June 25, Warsaw, paid (cheap)
+[Devoxx Poland](https://devoxx.pl/) - June 22-24, Kraków, paid
+
+[Confitura](https://confitura.pl/) - June 25, Warsaw, paid (cheap)
 
 [Ya!vaConf](https://yavaconf.com/) - Sep 27-28, online + Warsaw, paid
 
@@ -28,12 +32,22 @@ Note: the lists below are far from being complete :-)
 
 [geecon Prague](https://2022.geecon.cz/) - Oct 24-25, Prague, paid
 
+### 2023
 
+[Devoxx UK](https://www.devoxx.co.uk/) - May 10-12, London, paid
 
-# Search-related conferences in 2022
+# Search-related conferences
+
+### 2022
 
 [Berlin Buzzwords](https://2022.berlinbuzzwords.de/) - June 12-14, Berlin, paid
 
 [Haystack Berlin](https://haystackconf.com/) - Sep 27, Berlin. Paid
 
+[ApacheCon North America](https://www.apachecon.com/acna2022/index.html) - Oct 3-6, New Orleans, paid (one of the tracks is Search/Lucene)
+
 [Activate](https://www.activate-conf.com/) - Oct 27, online, paid
+
+### 2023
+
+[sigir](https://sigir.org/chiir2023/) - Mar 19-23'2023, Austin (Texas, USA), paid

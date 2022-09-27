@@ -102,8 +102,11 @@ Disabling
 defaults write .GlobalPreferences com.apple.scrollwheel.scaling -1
 ```
 
-## Shell
- - terminal: iTerm, color preset: Solarized Light 
+## Software
+ - [iTerm2](https://iterm2.com/) terminal, color preset: Solarized Light 
+ - [Divvy](https://mizage.com/divvy/) window manager - paid. Allows resizing windows using a nice diagram
+ - [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) - IDE
+ - [Clipy](https://clipy-app.com/) multi-clipboard
  - shell: ZSH + oh-my-zsh
  - theme: agnoster.rzarajczyk [https://github.com/rzarajczyk/agnoster-zsh-theme](https://github.com/rzarajczyk/agnoster-zsh-theme)
 
@@ -117,8 +120,7 @@ defaults write .GlobalPreferences com.apple.scrollwheel.scaling -1
  - [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa)
  - [EditThisCookie](https://chrome.google.com/webstore/detail/editthiscookie/fngmhnnpilhplaeedifhccceomclgfbg)
 
-## Interesting MacOS Apps
+## Other interesting MacOS Apps
  - [Tiles](https://www.sempliva.com/tiles/) Window Manager - freeware. Allows resizing windows by hotkeys or dragging
- - [Divvy](https://mizage.com/divvy/) Window Manager - paid. Allows resizing windows using nice diagram
  - [BetterTouchTool](https://folivora.ai/) allows customizing almost everything in MacOS, inclouding TouchBar.
- - [Clipy](https://clipy-app.com/) multi-clipboard
+ 

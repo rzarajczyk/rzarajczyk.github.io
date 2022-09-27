@@ -34,6 +34,8 @@ Note: the lists below are far from being complete :-)
 
 ### 2023
 
+[Warszawskie Dni Informatyki](https://warszawskiedniinformatyki.pl/) - Apr 1-2, online + Warsaw, paid (?)
+
 [Devoxx UK](https://www.devoxx.co.uk/) - May 10-12, London, paid
 
 # Search-related conferences

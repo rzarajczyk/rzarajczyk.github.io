@@ -78,20 +78,25 @@ brew install coreutils
 echo 'PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"' >> ~/.zshrc
 ```
 ## Python installation
+[downloas a script](resources/macos-install-python.sh)
 ```shell
 
 # docs: https://github.com/pyenv/pyenv#basic-github-checkout
- 
+
 brew install pyenv
+pyenv init --path
+pyenv init -
 echo 'eval "$(pyenv init --path)"' >> ~/.zprofile
 echo 'eval "$(pyenv init -)"' >> ~/.zshrc
-pyenv install --list
-# choose newest, f.ex.. 3.10.0
-pyenv install 3.10.0
+# choose newest, f.ex. 3.10.0
+NEWEST=$(pyenv install --list | grep -E "^\s*\d+\.\d+\.\d+$" | sort -V | tail -n 1 | xargs -I{} echo {})
+echo "Will install Python $NEWEST as default"
+pyenv install "$NEWEST"
 # use it
-pyenv global 3.10.0
+pyenv global "$NEWEST"
 # verify
 python --version
+echo "Done, please reboot the system"
 ```
 
 ## Disable "drag to top" opening Mission Controll

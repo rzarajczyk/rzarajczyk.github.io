@@ -23,8 +23,10 @@ bindkey '\e[H'    beginning-of-line
 bindkey '\e[F'    end-of-line
 ```
 
-## Polish characters like on Windows (aka switch right Command and Option) + switch tilde and paragraph
-[>> Run it!](resources/macos-switch-right-command-option.sh)
+## Key switching
+This change will:
+ - switch right Command and Option, aka Polish characters like on Windows ([download a script](resources/macos-switch-right-command-option.sh))
+ - switch tilde and paragraph ([download a script](resources/macos-switch-tilde-paragraph.sh))
 
 `~/Library/LaunchAgents/pl.zarajczyk.KeyRemappings.plist`
 ```xml
@@ -60,7 +62,8 @@ where:
 * `0x700000064` - button `§`
 * `0x700000035` - button `~` (tilde)
 
-## Key repeatting on long key press
+## Key repeating on long key press
+[download a script](resources/macos-key-repeating-on-long-press.sh)
 ```shell
 defaults write -g ApplePressAndHoldEnabled -bool false
 ```

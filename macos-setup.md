@@ -98,6 +98,7 @@ Uncheck "Displays have separate Spaces" then log out and back in again.
 ## Mouse settings
 
 ### Disable mouse scroll acceleration
+#### Note: this is probably not needed when Logi Options software is installed
 Reading current value
 ```shell
 defaults read .GlobalPreferences com.apple.scrollwheel.scaling
@@ -115,9 +116,6 @@ defaults write .GlobalPreferences com.apple.scrollwheel.scaling -1
  - shell: ZSH + oh-my-zsh
  - theme: agnoster.rzarajczyk [https://github.com/rzarajczyk/agnoster-zsh-theme](https://github.com/rzarajczyk/agnoster-zsh-theme)
 
-## BetterTouchTool
- - preset: [btt.bttpreset](resources/btt.bttpreset)
-
 ## Interesting Chrome Extensions
  - [Url Editor PRO](https://chrome.google.com/webstore/detail/url-editor-pro/maoigfcibanjdgnepaiiadjhgmejclea)
  - [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
@@ -127,5 +125,5 @@ defaults write .GlobalPreferences com.apple.scrollwheel.scaling -1
 
 ## Other interesting MacOS Apps
  - [Tiles](https://www.sempliva.com/tiles/) Window Manager - freeware. Allows resizing windows by hotkeys or dragging
- - [BetterTouchTool](https://folivora.ai/) allows customizing almost everything in MacOS, inclouding TouchBar.
+ - [BetterTouchTool](https://folivora.ai/) allows customizing almost everything in MacOS, inclouding TouchBar. My preset: preset: [btt.bttpreset](resources/btt.bttpreset)
  

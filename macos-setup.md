@@ -1,5 +1,124 @@
 # My favorite MacOS initial setup
 
+## Key switching: right Command and Option, aka Polish characters like on Windows
+[download a script](resources/macos-switch-right-command-option.sh)
+
+`~/Library/LaunchAgents/pl.zarajczyk.RightCommandOptionKeyRemappings.plist`
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.nanoant.KeyRemapping</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/bin/hidutil</string>
+        <string>property</string>
+        <string>--set</string>
+        <string>{"UserKeyMapping":
+    [
+        {"HIDKeyboardModifierMappingSrc":0x7000000e7,"HIDKeyboardModifierMappingDst":0x7000000e6},
+        {"HIDKeyboardModifierMappingSrc":0x7000000e6,"HIDKeyboardModifierMappingDst":0x7000000e7}
+    ]
+}</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+</dict>
+</plist>
+```
+where:
+* `0x7000000e7` - right Command
+* `0x7000000e6` - right Option
+
+## Key switching: tilde and paragraph
+[download a script](resources/macos-switch-tilde-paragraph.sh)
+
+`~/Library/LaunchAgents/pl.zarajczyk.RightCommandOptionKeyRemappings.plist`
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.nanoant.KeyRemapping</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/bin/hidutil</string>
+        <string>property</string>
+        <string>--set</string>
+        <string>{"UserKeyMapping":
+    [
+        {"HIDKeyboardModifierMappingSrc":0x700000064,"HIDKeyboardModifierMappingDst":0x700000035},
+        {"HIDKeyboardModifierMappingSrc":0x700000035,"HIDKeyboardModifierMappingDst":0x700000064}
+    ]
+}</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+</dict>
+</plist>
+```
+where:
+* `0x700000064` - button `§`
+* `0x700000035` - button `~` (tilde)
+
+## Key repeating on long key press
+[download a script](resources/macos-key-repeating-on-long-press.sh)
+```shell
+defaults write -g ApplePressAndHoldEnabled -bool false
+```
+
+## Homebrew & coreutils installation
+[download a script](resources/macos-install-brew-coreutils.sh)
+```shell
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"  ## from https://brew.sh/index_pl
+brew install coreutils
+echo 'PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"' >> ~/.zshrc
+```
+## Python installation
+```shell
+
+# docs: https://github.com/pyenv/pyenv#basic-github-checkout
+ 
+brew install pyenv
+echo 'eval "$(pyenv init --path)"' >> ~/.zprofile
+echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+pyenv install --list
+# choose newest, f.ex.. 3.10.0
+pyenv install 3.10.0
+# use it
+pyenv global 3.10.0
+# verify
+python --version
+```
+
+## Disable "drag to top" opening Mission Controll
+
+Go to `System Preferences` > `Mission Control`
+Uncheck "Displays have separate Spaces" then log out and back in again.
+
+## Software
+ - [Logi Options](https://www.logitech.com/pl-pl/software/options.html) app from Logitech for mouse and keyboard
+ - [iTerm2](https://iterm2.com/) terminal, color preset: Solarized Light 
+ - [Divvy](https://mizage.com/divvy/) window manager - paid. Allows resizing windows using a nice diagram
+ - [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) - IDE
+ - [Clipy](https://clipy-app.com/) multi-clipboard
+ - [Tiles](https://www.sempliva.com/tiles/) Window Manager - freeware. Allows resizing windows by hotkeys or dragging
+ - shell: ZSH + oh-my-zsh
+ - [https://github.com/rzarajczyk/agnoster-zsh-theme](https://github.com/rzarajczyk/agnoster-zsh-theme) theme for oh-my-zsh: agnoster.rzarajczyk
+
+## Interesting Chrome Extensions
+ - [Url Editor PRO](https://chrome.google.com/webstore/detail/url-editor-pro/maoigfcibanjdgnepaiiadjhgmejclea)
+ - [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
+ - [ModHeader](https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj)
+ - [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa)
+ - [EditThisCookie](https://chrome.google.com/webstore/detail/editthiscookie/fngmhnnpilhplaeedifhccceomclgfbg)
+
+## Other interesting MacOS Apps
+ - [BetterTouchTool](https://folivora.ai/) allows customizing almost everything in MacOS, inclouding TouchBar. My preset: preset: [btt.bttpreset](resources/btt.bttpreset)
+
 ## Buttons Home, End, Page Up i Page Down - like on Windows
 
 `~/Library/KeyBindings/DefaultKeyBinding.dict`
@@ -23,81 +142,7 @@ bindkey '\e[H'    beginning-of-line
 bindkey '\e[F'    end-of-line
 ```
 
-## Key switching
-This change will:
- - switch right Command and Option, aka Polish characters like on Windows ([download a script](resources/macos-switch-right-command-option.sh))
- - switch tilde and paragraph ([download a script](resources/macos-switch-tilde-paragraph.sh))
-
-`~/Library/LaunchAgents/pl.zarajczyk.KeyRemappings.plist`
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-    <key>Label</key>
-    <string>com.nanoant.KeyRemapping</string>
-    <key>ProgramArguments</key>
-    <array>
-        <string>/usr/bin/hidutil</string>
-        <string>property</string>
-        <string>--set</string>
-        <string>{"UserKeyMapping":
-    [
-        {"HIDKeyboardModifierMappingSrc":0x7000000e7,"HIDKeyboardModifierMappingDst":0x7000000e6},
-        {"HIDKeyboardModifierMappingSrc":0x7000000e6,"HIDKeyboardModifierMappingDst":0x7000000e7},
-        {"HIDKeyboardModifierMappingSrc":0x700000064,"HIDKeyboardModifierMappingDst":0x700000035},
-        {"HIDKeyboardModifierMappingSrc":0x700000035,"HIDKeyboardModifierMappingDst":0x700000064}
-    ]
-}</string>
-    </array>
-    <key>RunAtLoad</key>
-    <true/>
-</dict>
-</plist>
-```
-where:
-
-* `0x7000000e7` - right Command
-* `0x7000000e6` - right Option
-* `0x700000064` - button `§`
-* `0x700000035` - button `~` (tilde)
-
-## Key repeating on long key press
-[download a script](resources/macos-key-repeating-on-long-press.sh)
-```shell
-defaults write -g ApplePressAndHoldEnabled -bool false
-```
-
-## Homebrew & coreutils installation
-```shell
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"  ## from https://brew.sh/index_pl
-brew install coreutils
-```
-## Python installation
-```shell
-
-# docs: https://github.com/pyenv/pyenv#basic-github-checkout
- 
-brew install pyenv
-echo 'eval "$(pyenv init --path)"' >> ~/.zprofile
-echo 'eval "$(pyenv init -)"' >> ~/.zshrc
-pyenv install --list
-# choose newest, np. 3.10.0
-pyenv install 3.10.0
-# use it
-pyenv global 3.10.0
-# verify
-python --version
-```
-
-## Disable "drag to top" opening Mission Controll
-
-Go to `System Preferences` > `Mission Control`
-Uncheck "Displays have separate Spaces" then log out and back in again.
-
-## Mouse settings
-
-### Disable mouse scroll acceleration
+## Disable mouse scroll acceleration
 #### Note: this is probably not needed when Logi Options software is installed
 Reading current value
 ```shell
@@ -107,23 +152,3 @@ Disabling
 ```shell
 defaults write .GlobalPreferences com.apple.scrollwheel.scaling -1
 ```
-
-## Software
- - [iTerm2](https://iterm2.com/) terminal, color preset: Solarized Light 
- - [Divvy](https://mizage.com/divvy/) window manager - paid. Allows resizing windows using a nice diagram
- - [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) - IDE
- - [Clipy](https://clipy-app.com/) multi-clipboard
- - shell: ZSH + oh-my-zsh
- - theme: agnoster.rzarajczyk [https://github.com/rzarajczyk/agnoster-zsh-theme](https://github.com/rzarajczyk/agnoster-zsh-theme)
-
-## Interesting Chrome Extensions
- - [Url Editor PRO](https://chrome.google.com/webstore/detail/url-editor-pro/maoigfcibanjdgnepaiiadjhgmejclea)
- - [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
- - [ModHeader](https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj)
- - [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa)
- - [EditThisCookie](https://chrome.google.com/webstore/detail/editthiscookie/fngmhnnpilhplaeedifhccceomclgfbg)
-
-## Other interesting MacOS Apps
- - [Tiles](https://www.sempliva.com/tiles/) Window Manager - freeware. Allows resizing windows by hotkeys or dragging
- - [BetterTouchTool](https://folivora.ai/) allows customizing almost everything in MacOS, inclouding TouchBar. My preset: preset: [btt.bttpreset](resources/btt.bttpreset)
- 

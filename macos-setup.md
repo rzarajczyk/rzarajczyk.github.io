@@ -31,6 +31,7 @@
 where:
 * `0x7000000e7` - right Command
 * `0x7000000e6` - right Option
+* others: [https://hidutil-generator.netlify.app/](https://hidutil-generator.netlify.app/)
 
 ## Key switching: tilde and paragraph
 [download a script](resources/macos-switch-tilde-paragraph.sh)
@@ -63,6 +64,7 @@ where:
 where:
 * `0x700000064` - button `§`
 * `0x700000035` - button `~` (tilde)
+* others: [https://hidutil-generator.netlify.app/](https://hidutil-generator.netlify.app/)
 
 ## Key repeating on long key press
 [download a script](resources/macos-key-repeating-on-long-press.sh)

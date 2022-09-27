@@ -23,8 +23,10 @@ bindkey '\e[H'    beginning-of-line
 bindkey '\e[F'    end-of-line
 ```
 
-## Polish characters like on Windows + switch tilde and paragraph
-`~/Library/LaunchAgents/pl.example.KeyRemappings.plist`
+## Polish characters like on Windows (aka switch right Command and Option) + switch tilde and paragraph
+[>> Run it!](resources/macos-switch-right-command-option.sh)
+
+`~/Library/LaunchAgents/pl.zarajczyk.KeyRemappings.plist`
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -53,7 +55,7 @@ bindkey '\e[F'    end-of-line
 ```
 where:
 
-* `0x7000000e7` - right Cmmand
+* `0x7000000e7` - right Command
 * `0x7000000e6` - right Option
 * `0x700000064` - button `§`
 * `0x700000035` - button `~` (tilde)
@@ -111,7 +113,7 @@ defaults write .GlobalPreferences com.apple.scrollwheel.scaling -1
  - theme: agnoster.rzarajczyk [https://github.com/rzarajczyk/agnoster-zsh-theme](https://github.com/rzarajczyk/agnoster-zsh-theme)
 
 ## BetterTouchTool
- - preset: [btt.bttpreset](btt.bttpreset)
+ - preset: [btt.bttpreset](resources/btt.bttpreset)
 
 ## Interesting Chrome Extensions
  - [Url Editor PRO](https://chrome.google.com/webstore/detail/url-editor-pro/maoigfcibanjdgnepaiiadjhgmejclea)

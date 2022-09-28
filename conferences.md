@@ -36,6 +36,8 @@ Note: the lists below are far from being complete :-)
 
 [Warszawskie Dni Informatyki](https://warszawskiedniinformatyki.pl/) - Apr 1-2, online + Warsaw, paid (?)
 
+[KotlinConf](https://kotlinconf.com/) - Apr 13-14, Amsterdam, paid
+
 [Devoxx UK](https://www.devoxx.co.uk/) - May 10-12, London, paid
 
 # Search-related conferences

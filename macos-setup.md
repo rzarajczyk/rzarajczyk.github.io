@@ -66,6 +66,33 @@ where:
 * `0x700000035` - button `~` (tilde)
 * others: [https://hidutil-generator.netlify.app/](https://hidutil-generator.netlify.app/)
 
+## Buttons Home, End, Page Up i Page Down - like on Windows
+[download a script](resources/macos-home-end-buttons.sh)
+
+On Windows pressing Home/End when entering a text in a website moves the caret position to the beginning/end of text field.
+On MacOS, it will scroll the entire webpage.
+
+`~/Library/KeyBindings/DefaultKeyBinding.dict`
+```shell
+{
+  "\UF729"  = moveToBeginningOfParagraph:; // home
+  "\UF72B"  = moveToEndOfParagraph:; // end
+  "$\UF729" = moveToBeginningOfParagraphAndModifySelection:; // shift-home
+  "$\UF72B" = moveToEndOfParagraphAndModifySelection:; // shift-end
+  "^\UF729" = moveToBeginningOfDocument:; // ctrl-home
+  "^\UF72B" = moveToEndOfDocument:; // ctrl-end
+  "^$\UF729" = moveToBeginningOfDocumentAndModifySelection:; // ctrl-shift-home
+  "^$\UF72B" = moveToEndOfDocumentAndModifySelection:; // ctrl-shift-end
+}
+```
+
+Additionally - iTerm:
+`~/.zshrc`
+```shell
+bindkey '\e[H'    beginning-of-line
+bindkey '\e[F'    end-of-line
+```
+
 ## Key repeating on long key press
 [download a script](resources/macos-key-repeating-on-long-press.sh)
 ```shell
@@ -140,29 +167,6 @@ Uncheck "Displays have separate Spaces" then log out and back in again.
 
 ## Other interesting MacOS Apps
  - [BetterTouchTool](https://folivora.ai/) allows customizing almost everything in MacOS, inclouding TouchBar. My preset: preset: [btt.bttpreset](resources/btt.bttpreset)
-
-## Buttons Home, End, Page Up i Page Down - like on Windows
-
-`~/Library/KeyBindings/DefaultKeyBinding.dict`
-```shell
-{
-  "\UF729"  = moveToBeginningOfParagraph:; // home
-  "\UF72B"  = moveToEndOfParagraph:; // end
-  "$\UF729" = moveToBeginningOfParagraphAndModifySelection:; // shift-home
-  "$\UF72B" = moveToEndOfParagraphAndModifySelection:; // shift-end
-  "^\UF729" = moveToBeginningOfDocument:; // ctrl-home
-  "^\UF72B" = moveToEndOfDocument:; // ctrl-end
-  "^$\UF729" = moveToBeginningOfDocumentAndModifySelection:; // ctrl-shift-home
-  "^$\UF72B" = moveToEndOfDocumentAndModifySelection:; // ctrl-shift-end
-}
-```
-
-Additionally - iTerm:
-`~/.zshrc`
-```shell
-bindkey '\e[H'    beginning-of-line
-bindkey '\e[F'    end-of-line
-```
 
 ## Disable mouse scroll acceleration
 #### Note: this is probably not needed when Logi Options software is installed

@@ -157,6 +157,7 @@ Uncheck "Displays have separate Spaces" then log out and back in again.
  - shell: ZSH + oh-my-zsh
  - [https://github.com/rzarajczyk/agnoster-zsh-theme](https://github.com/rzarajczyk/agnoster-zsh-theme) theme for oh-my-zsh: agnoster.rzarajczyk\
  - [HP Drivers](https://support.apple.com/kb/DL1888?locale=en_US) - HP Drivers for older printers (see also [this link](https://h30434.www3.hp.com/t5/Printers-Knowledge-Base/Having-problems-installing-older-HP-Printers-on-later-macOS/ta-p/7946104))
+ - [Adobe Reader](https://get.adobe.com/pl/reader/) - PDF reader
 
 ## Interesting Chrome Extensions
  - [Url Editor PRO](https://chrome.google.com/webstore/detail/url-editor-pro/maoigfcibanjdgnepaiiadjhgmejclea)

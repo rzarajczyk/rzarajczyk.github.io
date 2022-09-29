@@ -99,11 +99,12 @@ bindkey '\e[F'    end-of-line
 defaults write -g ApplePressAndHoldEnabled -bool false
 ```
 
-## Homebrew & coreutils installation
+## Homebrew & coreutils & command line tools installation
 [download a script](resources/macos-install-brew-coreutils.sh)
 ```shell
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"  ## from https://brew.sh/index_pl
 brew install coreutils
+brew install watch
 echo 'PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"' >> ~/.zshrc
 ```
 ## Python installation
@@ -158,11 +159,6 @@ Uncheck "Displays have separate Spaces" then log out and back in again.
  - [https://github.com/rzarajczyk/agnoster-zsh-theme](https://github.com/rzarajczyk/agnoster-zsh-theme) theme for oh-my-zsh: agnoster.rzarajczyk\
  - [HP Drivers](https://support.apple.com/kb/DL1888?locale=en_US) - HP Drivers for older printers (see also [this link](https://h30434.www3.hp.com/t5/Printers-Knowledge-Base/Having-problems-installing-older-HP-Printers-on-later-macOS/ta-p/7946104))
  - [Adobe Reader](https://get.adobe.com/pl/reader/) - PDF reader
-
-## Command-line tools
-```shell
-brew install watch
-```
 
 ## Interesting Chrome Extensions
  - [Url Editor PRO](https://chrome.google.com/webstore/detail/url-editor-pro/maoigfcibanjdgnepaiiadjhgmejclea)

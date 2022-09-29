@@ -16,6 +16,8 @@ Note: the lists below are far from being complete :-)
 
 [Confitura](https://confitura.pl/) - June 25, Warsaw, paid (cheap)
 
+[JavaZone](https://javazone.no/) - Sep 7-8, Oslo, paid
+
 [Ya!vaConf](https://yavaconf.com/) - Sep 27-28, online + Warsaw, paid
 
 [Javeloper 2022 Autumn Edition](https://javeloper.pl/) - Sep 29, online, free

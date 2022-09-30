@@ -1,6 +1,6 @@
 # Ubuntu initial setup
 
-## Logitech MX Keys Mac in Ubuntu, aka how to switch Win and Alt button
+## Logitech MX Keys Mac in Ubuntu 22.04, aka how to switch Win and Alt button
 
 GUI tool for remapping the keyboard
 ```shell

@@ -1,8 +1,14 @@
 # Ubuntu initial setup
 
-## Logitech MX Keys Mac in Ubuntu 22.04, aka how to switch Win and Alt button
+## Logitech MX Keys Mac in Ubuntu 22.04
 
-GUI tool for remapping the keyboard
+The **Logitech MX Keys Mac** keyboard workd generally fine in Ubuntu, however it has a bit different layout than the one Ubuntu expects.
+
+Especially, two changes are required for smooth work:
+ * switch Win and Alt keys
+ * use Eject key as PrintScreen
+
+### GUI tool for remapping the keyboard
 ```shell
 sudo apt update && sudo apt install input-remapper
 ```

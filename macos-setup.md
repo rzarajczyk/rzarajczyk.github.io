@@ -105,6 +105,7 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"  ## from https://brew.sh/index_pl
 brew install coreutils
 brew install watch
+brew install wget
 echo 'PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"' >> ~/.zshrc
 ```
 ## Python installation
@@ -130,7 +131,7 @@ echo "Done, please reboot the system"
 ```
 
 ## Java installation (three versions at once)
-[downloas a script](resources/macos-install-java.sh)
+[download a script](resources/macos-install-java.sh)
 ```shell
 brew install openjdk@8
 brew install openjdk@11

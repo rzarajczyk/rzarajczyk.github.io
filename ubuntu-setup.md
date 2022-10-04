@@ -46,8 +46,9 @@ echo 'export DOCKER_HOST=unix:///run/user/1000/docker.sock' >> ~/.bashrc
 ```
 
 ## GUI Tools
-[Google Chrome](https://www.google.pl/chrome) - Google Chrome
-[Slack](https://slack.com/downloads/linux) - Slack (note: use DEB version; do not use Snap version, it's buggy!)
+
+* [Google Chrome](https://www.google.pl/chrome) - Google Chrome
+* [Slack](https://slack.com/downloads/linux) - Slack (note: use DEB version; do not use Snap version, it's buggy!)
 ```shell
 snap install intellij-idea-ultimate --classic
 ```
@@ -55,5 +56,5 @@ snap install intellij-idea-ultimate --classic
 
 ## Gnome Extentions
 
-[Dash-to-panel](https://extensions.gnome.org/extension/1160/dash-to-panel/) - makes Gnome look more like Windows (one horizontal bar at the bottom)
+* [Dash-to-panel](https://extensions.gnome.org/extension/1160/dash-to-panel/) - makes Gnome look more like Windows (one horizontal bar at the bottom)
 

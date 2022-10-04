@@ -16,3 +16,17 @@ sudo apt update && sudo apt install input-remapper
 
 **Note on "Left Win" key**: Input Remapper is unable to capture "Left Win" key, as it starts Gonme's launcher screen.
 To avoid that, install **Gnome Tweaks** from Ubuntu Software and temporarily change launcher screen keyboard shortcut.
+
+### Function keys without `fn`
+
+There's a `FnLock` button on the keyboard (usually it's written on the `Esc` key)
+
+## Background effects in MS Teams Linux
+
+For some reason the MS Teams desktop client in Linux doesn't support backgrouind effects. The same applies do web client in Firefox. But the web client in Chrome does support them! So simply use Chrome form Teams!
+
+## OpenJDK 17 installation
+```shell
+sudo apt update
+sudo apt install -y openjdk-17-jdk
+```

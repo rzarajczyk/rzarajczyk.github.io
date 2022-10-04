@@ -32,6 +32,9 @@ For some reason the MS Teams desktop client in Linux doesn't support backgrouind
 sudo apt update
 sudo apt install -y openjdk-17-jdk
 sudo apt install -y git
+git config --global user.name "<name>"
+git config --global user.email "<email>"
+
 
 # Docker
 curl -fsSL https://test.docker.com -o test-docker.sh

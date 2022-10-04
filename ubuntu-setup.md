@@ -32,6 +32,14 @@ sudo apt install -y openjdk-17-jdk
 sudo apt install -y git
 ```
 
+## GUI Tools
+[Google Chrome](https://www.google.pl/chrome)
+```shell
+snap install intellij-idea-ultimate --classic
+snap install slack
+```
+
+
 ## Gnome Extentions
 
 https://extensions.gnome.org/extension/1160/dash-to-panel/

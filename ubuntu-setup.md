@@ -41,6 +41,8 @@ sudo sh -eux <<EOF
 apt-get install -y uidmap
 EOF
 dockerd-rootless-setuptool.sh install
+echo 'echo "" >> ~/.bashrc' >> ~/.bashrc
+echo 'export DOCKER_HOST=unix:///run/user/1000/docker.sock' >> ~/.bashrc
 ```
 
 ## GUI Tools

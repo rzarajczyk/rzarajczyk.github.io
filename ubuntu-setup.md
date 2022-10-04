@@ -30,3 +30,8 @@ For some reason the MS Teams desktop client in Linux doesn't support backgrouind
 sudo apt update
 sudo apt install -y openjdk-17-jdk
 ```
+
+## Gnome Extentions
+
+https://extensions.gnome.org/extension/1160/dash-to-panel/
+

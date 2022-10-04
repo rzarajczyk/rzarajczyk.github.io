@@ -1,5 +1,7 @@
 # Ubuntu initial setup
 
+**Note:** Under construction!
+
 ## Logitech MX Keys Mac in Ubuntu 22.04
 
 The **Logitech MX Keys Mac** keyboard workd generally fine in Ubuntu, however it has a bit different layout than the one Ubuntu expects.
@@ -30,6 +32,15 @@ For some reason the MS Teams desktop client in Linux doesn't support backgrouind
 sudo apt update
 sudo apt install -y openjdk-17-jdk
 sudo apt install -y git
+
+# Docker
+curl -fsSL https://test.docker.com -o test-docker.sh
+sudo sh test-docker.sh
+sudo sh -eux <<EOF
+# Install newuidmap & newgidmap binaries
+apt-get install -y uidmap
+EOF
+dockerd-rootless-setuptool.sh install
 ```
 
 ## GUI Tools

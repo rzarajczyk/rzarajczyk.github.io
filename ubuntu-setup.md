@@ -25,10 +25,11 @@ There's a `FnLock` button on the keyboard (usually it's written on the `Esc` key
 
 For some reason the MS Teams desktop client in Linux doesn't support backgrouind effects. The same applies do web client in Firefox. But the web client in Chrome does support them! So simply use Chrome form Teams!
 
-## OpenJDK 17 installation
+## OpenJDK 17 installation and command line tools
 ```shell
 sudo apt update
 sudo apt install -y openjdk-17-jdk
+sudo apt install -y git
 ```
 
 ## Gnome Extentions

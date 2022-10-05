@@ -73,11 +73,12 @@ xdotool key super
 
 For some reason the MS Teams desktop client in Linux doesn't support backgrouind effects. The same applies do web client in Firefox. But the web client in Chrome does support them! So **simply use Chrome for Teams!**
 
-## OpenJDK 17, Docker, git installation
+## OpenJDK 17, Docker, git installation + command line tools
 ```shell
 sudo apt update
 sudo apt install -y openjdk-17-jdk
 sudo apt install -y git
+sudo apt install -y httpie
 git config --global user.name "<name>"
 git config --global user.email "<email>"
 

@@ -106,12 +106,10 @@ For some reason the MS Teams desktop client in Linux doesn't support backgrouind
 ## OpenJDK 17, Docker, git installation + command line tools
 ```shell
 sudo apt update
+  
 sudo apt install -y openjdk-17-jdk
 sudo apt install -y git
 sudo apt install -y httpie
-git config --global user.name "<name>"
-git config --global user.email "<email>"
-
 
 # Docker
 curl -fsSL https://get.docker.com -o get-docker.sh
@@ -121,10 +119,17 @@ sudo sh -eux <<EOF
 apt-get install -y uidmap
 EOF
 dockerd-rootless-setuptool.sh install
+docker context use rootless
 echo 'echo "" >> ~/.bashrc' >> ~/.bashrc
 echo 'export DOCKER_HOST=unix:///run/user/1000/docker.sock' >> ~/.bashrc
 ```
 
+Remember to set up git:
+```shell
+git config --global user.name "<name>"
+git config --global user.email "<email>"
+```
+  
 ## GUI Tools
 
 * [Google Chrome](https://www.google.pl/chrome) - Google Chrome

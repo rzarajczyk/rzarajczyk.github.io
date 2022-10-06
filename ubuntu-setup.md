@@ -114,8 +114,8 @@ git config --global user.email "<email>"
 
 
 # Docker
-curl -fsSL https://test.docker.com -o test-docker.sh
-sudo sh test-docker.sh
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
 sudo sh -eux <<EOF
 # Install newuidmap & newgidmap binaries
 apt-get install -y uidmap

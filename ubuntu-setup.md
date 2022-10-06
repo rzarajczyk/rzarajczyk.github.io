@@ -101,7 +101,7 @@ xdotool key super
   
 ## Background effects in MS Teams Linux
 
-For some reason the MS Teams desktop client in Linux doesn't support backgrouind effects. The same applies do web client in Firefox. But the web client in Chrome does support them! So **simply use Chrome for Teams!**
+For some reason the MS Teams desktop client in Linux doesn't support background effects. The same applies to web client in Firefox. But the web client in Chrome does support them! So **simply use Chrome for Teams!**
 
 ## OpenJDK 17, Docker, git installation + command line tools
 ```shell

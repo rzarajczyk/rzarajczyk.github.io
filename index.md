@@ -3,5 +3,6 @@
 * [Getting memory statistics from command line in MacOS](macos-memory-statistics.md)
 * [My favorite MacOS initial setup](macos-setup.md)
 * [Ubuntu 22.04 initial setup](ubuntu-setup.md)
+* [Ubuntu 22.04 and Logitech MX Keys for Mac](logitech-mx-keys-ubuntu.md)
 * [Ubuntu 22.04 and Logitech MX Vertical](logitech-mx-vertical-ubuntu.md)
 * [Using multiple SSH keys in GitHub](github.md)

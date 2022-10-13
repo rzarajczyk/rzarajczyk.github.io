@@ -4,6 +4,8 @@ Note: the lists below are far from being complete :-)
 
 ### 2022
 
+[4developers](https://4developers.org.pl/4developers-2022-online/) - Apr 4-7, online, paid
+
 [geecon Kraków](https://2022.geecon.org/) - May 11-13, Kraków, paid
 
 [Code Europe 3cITy](https://www.codeeurope.pl/) - May 30th, Gdańsk, paid
@@ -32,7 +34,15 @@ Note: the lists below are far from being complete :-)
 
 [Devoxx Belgium](https://devoxx.be/) - Oct 10-14, Antwerp, paid
 
+[4developers Katowice](https://4developers.org.pl/) - Oct 11, Katowice
+
 [geecon Prague](https://2022.geecon.cz/) - Oct 24-25, Prague, paid
+
+[4developers Poznań](https://4developers.org.pl/) - Oct 27, Poznań, paid
+
+[4developers Wrocław](https://4developers.org.pl/) - Nov 08, Wrocław, paid
+
+[4developers Łódź](https://4developers.org.pl/) - Nov 29, Łódź, paid
 
 ### 2023
 

@@ -18,7 +18,9 @@ sudo apt update
   
 sudo apt install -y openjdk-17-jdk
 sudo apt install -y git
-sudo apt install -y httpie
+sudo apt install -y httpie wget curl screen jq
+sudo apt install -y magic-wormhole
+sudo apt install -y virtualbox
 
 # Docker
 curl -fsSL https://get.docker.com -o get-docker.sh
@@ -38,11 +40,62 @@ Remember to set up git:
 git config --global user.name "<name>"
 git config --global user.email "<email>"
 ```
+
+## Python (using pyenv)
+```shell
+sudo apt install -y make \
+  build-essential \
+  gcc \
+  libssl-dev \
+  zlib1g-dev \
+  libbz2-dev \
+  libreadline-dev \
+  libsqlite3-dev \
+  llvm \
+  libncurses5-dev \
+  libncursesw5-dev \
+  xz-utils \
+  tk-dev
+  
+curl https://pyenv.run | bash
+```
+
+Add to `.bashrc`:
+```shell
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+```
+
+Then:
+```shell
+pyenv install --list
+# choose the newest, f.ex. 3.10.7
+pyenv install 3.10.7
+pyenv global 3.10.7
+```
+## Docker (rootless)
+```shell
+# Docker
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo sh -eux <<EOF
+# Install newuidmap & newgidmap binaries
+apt-get install -y uidmap
+EOF
+dockerd-rootless-setuptool.sh install
+docker context use rootless
+echo 'export PATH="/usr/bin/$PATH" >> ~/.bashrc' >> ~/.bashrc
+echo 'export DOCKER_HOST=unix:///run/user/1000/docker.sock' >> ~/.bashrc
+```
   
 ## GUI Tools
 
 * [Google Chrome](https://www.google.pl/chrome) - Google Chrome
 * [Slack](https://slack.com/downloads/linux) - Slack (note: use DEB version; do not use Snap version, it's buggy!)
+* [KeePassXC](https://keepassxc.org/download/#linux) - password manager
+* [Shutter](https://shutter-project.org/downloads/third-party-packages/) - screenshooting tool
 ```shell
 snap install intellij-idea-ultimate --classic
 ```

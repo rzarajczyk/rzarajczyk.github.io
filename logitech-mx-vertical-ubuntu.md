@@ -56,6 +56,20 @@ To sum up, the `/home/<user>/dpi-button.sh` should look like this:
 ydotool key 125:1 125:0
 ```
 
+**Note:** if the ydotool doesn't work after the reboot, create a following file: `/home/rzarajczyk/.config/autostart/ydotoold.desktop`
+with the following content:
+```text
+[Desktop Entry]
+Type=Application
+Terminal=false
+Name=ydotool deamon
+Exec=/usr/local/bin/ydotoold
+Comment=Generic Linux command-line automation tool (no X!).
+Categories=GNOME;GTK;System;
+
+```
+
+
 #### X.org version (fallback)
 If something goes wrong, you can use the alternative version - but it will require switching display manager
 to X.org (older display manager, it might have lower performance on 4K displays)

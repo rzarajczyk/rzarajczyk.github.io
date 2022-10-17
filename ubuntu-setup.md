@@ -96,12 +96,11 @@ echo 'export DOCKER_HOST=unix:///run/user/1000/docker.sock' >> ~/.bashrc
 * [Slack](https://slack.com/downloads/linux) - Slack (note: use DEB version; do not use Snap version, it's buggy!)
 * [KeePassXC](https://keepassxc.org/download/#linux) - password manager
 * [Shutter](https://shutter-project.org/downloads/third-party-packages/) - screenshooting tool
-```shell
-snap install intellij-idea-ultimate --classic
-```
+* [IntelliJ IDEA](https://www.jetbrains.com/idea/download/#section=linux) - IDE
 
 
 ## Gnome Extentions
 
 * [Dash-to-panel](https://extensions.gnome.org/extension/1160/dash-to-panel/) - makes Gnome look more like Windows (one horizontal bar at the bottom)
+* [gTile](https://extensions.gnome.org/extension/28/gtile/) - neat window placement manager, alternative to [WinDivvy](https://mizage.com/windivvy/)/[Divvy](https://mizage.com/divvy/) for MacOS
 

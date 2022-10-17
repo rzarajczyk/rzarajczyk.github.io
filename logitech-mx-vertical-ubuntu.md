@@ -40,7 +40,25 @@ on the keyboard, so our job is in fact to emulate _Super_ key press.
 First of all, we must switch Ubuntu to use _X.org_ instead of _Wayland_ as a display server.
 The following description is based on this thread: https://askubuntu.com/a/1354342
 
-**Note:** Maybe there's some way to do this in _Wayland_, but I don't know it
+#### Wayland version (preffered)
+If you're using Wayland as a display manager - which is probably the case, as Wayland is a default
+display manager in Ubuntu 22.04 - you need to install the `ydotool` tool. **Do not install if using apt**, 
+it's outdated! Instead, use the following instruction: https://askubuntu.com/a/1413830
+
+Then you can emulate pressing _Super_ (aka _Win_) key using the following command
+```shell
+ydotool key 125:1 125:0
+```
+
+To sum up, the `/home/<user>/dpi-button.sh` should look like this:
+```shell
+#!/bin/bash
+ydotool key 125:1 125:0
+```
+
+#### X.org version (fallback)
+If something goes wrong, you can use the alternative version - but it will require switching display manager
+to X.org (older display manager, it might have lower performance on 4K displays)
 
 Edit the file `/etc/gdm3/custom.conf` and uncomment line:
 ```text

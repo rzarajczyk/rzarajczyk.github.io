@@ -95,7 +95,7 @@ echo 'export DOCKER_HOST=unix:///run/user/1000/docker.sock' >> ~/.bashrc
 * [Google Chrome](https://www.google.pl/chrome) - Google Chrome
 * [Slack](https://slack.com/downloads/linux) - Slack (note: use DEB version; do not use Snap version, it's buggy!)
 * [KeePassXC](https://keepassxc.org/download/#linux) - password manager
-* [Shutter](https://shutter-project.org/downloads/third-party-packages/) - screenshooting tool
+* [Shutter](https://shutter-project.org/downloads/third-party-packages/) - screenshooting tool. **Very limitted functionality with the Wayland displat manager**, but has a cool Drawing tool.
 * [IntelliJ IDEA](https://www.jetbrains.com/idea/download/#section=linux) - IDE
 
 
@@ -103,9 +103,4 @@ echo 'export DOCKER_HOST=unix:///run/user/1000/docker.sock' >> ~/.bashrc
 
 * [Dash-to-panel](https://extensions.gnome.org/extension/1160/dash-to-panel/) - makes Gnome look more like Windows (one horizontal bar at the bottom)
 * [gTile](https://extensions.gnome.org/extension/28/gtile/) - neat window placement manager, alternative to [WinDivvy](https://mizage.com/windivvy/)/[Divvy](https://mizage.com/divvy/) for MacOS
-
-## Making screenshots using Shutter by pressing the PrintScreen key
- 1. open Settings > Keyboard > View and Customize Shurtcuts
- 2. open Screenshots and **disable** `Take a screenshot interactively`
- 3. open Custom Shortcuts  and add new shortcut: name `Screenshot` - command `shutter -s` - shortcut `Print`
 

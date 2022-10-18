@@ -104,3 +104,8 @@ echo 'export DOCKER_HOST=unix:///run/user/1000/docker.sock' >> ~/.bashrc
 * [Dash-to-panel](https://extensions.gnome.org/extension/1160/dash-to-panel/) - makes Gnome look more like Windows (one horizontal bar at the bottom)
 * [gTile](https://extensions.gnome.org/extension/28/gtile/) - neat window placement manager, alternative to [WinDivvy](https://mizage.com/windivvy/)/[Divvy](https://mizage.com/divvy/) for MacOS
 
+## Making screenshots using Shutter by PrintScreent key
+ 1. open Settings > Keyboard > View and Customize Shurtcuts
+ 2. open Screenshots and **disable** `Take a screenshot interactively`
+ 3. open Custom Shortcuts  and add new shortcut: name `Screenshot` - command `shutter -s` - shortcut `Print`
+

@@ -104,3 +104,10 @@ echo 'export DOCKER_HOST=unix:///run/user/1000/docker.sock' >> ~/.bashrc
 * [Dash-to-panel](https://extensions.gnome.org/extension/1160/dash-to-panel/) - makes Gnome look more like Windows (one horizontal bar at the bottom)
 * [gTile](https://extensions.gnome.org/extension/28/gtile/) - neat window placement manager, alternative to [WinDivvy](https://mizage.com/windivvy/)/[Divvy](https://mizage.com/divvy/) for MacOS
 
+## OneDrive sync
+
+1. First, install this command line tool: https://github.com/abraunegg/onedrive
+2. Then, download this GUI tool: https://github.com/bpozdena/OneDriveGUI
+
+**Note:** GUI is not an installer - it's a executable that just runs :-) So probably you'd like to move it to some `~/bin` folder before running.
+

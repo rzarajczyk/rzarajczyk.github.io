@@ -1,3 +1,4 @@
+* [Inspiring online resources](inspirations.md)
 * [Java and Search Conferences](conferences.md)
 * [Interesting online tools](interesting-online-tools.md)
 * [Getting memory statistics from command line in MacOS](macos-memory-statistics.md)

@@ -75,20 +75,6 @@ pyenv install --list
 pyenv install 3.10.7
 pyenv global 3.10.7
 ```
-## Docker (rootless)
-```shell
-# Docker
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
-sudo sh -eux <<EOF
-# Install newuidmap & newgidmap binaries
-apt-get install -y uidmap
-EOF
-dockerd-rootless-setuptool.sh install
-docker context use rootless
-echo 'export PATH="/usr/bin/$PATH" >> ~/.bashrc' >> ~/.bashrc
-echo 'export DOCKER_HOST=unix:///run/user/1000/docker.sock' >> ~/.bashrc
-```
   
 ## GUI Tools
 

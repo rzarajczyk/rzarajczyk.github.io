@@ -86,7 +86,7 @@ On MacOS, it will scroll the entire webpage.
 }
 ```
 
-Additionally - iTerm:
+Additionally - iTerm (assuming you're using ZSH shell):
 `~/.zshrc`
 ```shell
 bindkey '\e[H'    beginning-of-line
@@ -102,11 +102,12 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 ## Homebrew & coreutils & command line tools installation
 [download a script](resources/macos-install-brew-coreutils.sh)
 ```shell
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"  ## from https://brew.sh/index_pl
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"  ## from https://brew.sh/index_plecho 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/rafal.zarajczyk/.zprofile # Assuming ZSH shell!!
+eval "$(/opt/homebrew/bin/brew shellenv)"
 brew install coreutils
 brew install watch
 brew install wget
-echo 'PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"' >> ~/.zshrc
+echo 'PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"' >> ~/.zshrc.  # Assuming ZSH shell!
 ```
 ## Python installation
 [downloas a script](resources/macos-install-python.sh)
@@ -130,16 +131,13 @@ python --version
 echo "Done, please reboot the system"
 ```
 
-## Java installation (three versions at once)
+## Java installation (two versions at once)
 [download a script](resources/macos-install-java.sh)
 ```shell
-brew install openjdk@8
 brew install openjdk@11
 brew install openjdk@17
-sudo ln -sfn /usr/local/opt/openjdk@8/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-8.jdk
-sudo ln -sfn /usr/local/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
-sudo ln -sfn /usr/local/opt/openjdk@17/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk
-echo 'alias java8="export JAVA_HOME=$(/usr/libexec/java_home -v 1.8); java -version"' >> ~/.zshrc
+sudo ln -sfn $(brew --prefix openjdk@11)/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
+sudo ln -sfn $(brew --prefix openjdk@17)/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk
 echo 'alias java11="export JAVA_HOME=$(/usr/libexec/java_home -v 11); java -version"' >> ~/.zshrc
 echo 'alias java17="export JAVA_HOME=$(/usr/libexec/java_home -v 17); java -version"' >> ~/.zshrc
 ```

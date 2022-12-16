@@ -144,6 +144,14 @@ echo 'alias java17="export JAVA_HOME=$(/usr/libexec/java_home -v 17); java -vers
 
 ## Disable "drag to top" opening Mission Controll
 
+### MacOS Ventura
+
+Go to `System setting` > `Desktop and Dock`
+Scroll to `Mission Control`
+Uncheck "Displays have separate Spaces" then log out and back in again.
+
+### Before MacOS Ventura
+
 Go to `System Preferences` > `Mission Control`
 Uncheck "Displays have separate Spaces" then log out and back in again.
 

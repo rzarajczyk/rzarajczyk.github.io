@@ -50,6 +50,8 @@ Note: the lists below are far from being complete :-)
 
 [KotlinConf](https://kotlinconf.com/) - Apr 13-14, Amsterdam, paid
 
+[4developers](https://4developers.org.pl) - Apr 18, Warsaw, paid
+
 [Devoxx UK](https://www.devoxx.co.uk/) - May 10-12, London, paid
 
 # Search-related conferences

@@ -2,6 +2,7 @@
 
 ## Non-technical
 * [brain.fm](https://www.brain.fm/) - music which helps you to focus
+* [freepik](https://www.freepik.com/) - lots of free graphics to use
 
 ## Technical
 * [Epoch Converter](https://www.epochconverter.com/) - converting timestmaps from/to human-readable format

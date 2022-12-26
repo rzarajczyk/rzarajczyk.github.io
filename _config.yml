@@ -1,2 +1,6 @@
 theme: jekyll-theme-slate
 google_analytics: UA-18093684-8
+plugins:
+  - jekyll-titles-from-headings
+titles_from_headings:
+  enabled: true

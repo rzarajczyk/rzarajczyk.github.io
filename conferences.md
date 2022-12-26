@@ -2,6 +2,16 @@ Note: the lists below are far from being complete :-)
 
 # JVM related conferences
 
+### 2023
+
+[Warszawskie Dni Informatyki](https://warszawskiedniinformatyki.pl/) - Apr 1-2, online + Warsaw, paid (?)
+
+[KotlinConf](https://kotlinconf.com/) - Apr 13-14, Amsterdam, paid
+
+[4developers](https://4developers.org.pl) - Apr 18, Warsaw, paid
+
+[Devoxx UK](https://www.devoxx.co.uk/) - May 10-12, London, paid
+
 ### 2022
 
 [4developers](https://4developers.org.pl/4developers-2022-online/) - Apr 4-7, online, paid
@@ -44,17 +54,11 @@ Note: the lists below are far from being complete :-)
 
 [4developers Łódź](https://4developers.org.pl/) - Nov 29, Łódź, paid
 
+# Search-related conferences
+
 ### 2023
 
-[Warszawskie Dni Informatyki](https://warszawskiedniinformatyki.pl/) - Apr 1-2, online + Warsaw, paid (?)
-
-[KotlinConf](https://kotlinconf.com/) - Apr 13-14, Amsterdam, paid
-
-[4developers](https://4developers.org.pl) - Apr 18, Warsaw, paid
-
-[Devoxx UK](https://www.devoxx.co.uk/) - May 10-12, London, paid
-
-# Search-related conferences
+[sigir](https://sigir.org/chiir2023/) - Mar 19-23'2023, Austin (Texas, USA), paid
 
 ### 2022
 
@@ -65,7 +69,3 @@ Note: the lists below are far from being complete :-)
 [ApacheCon North America](https://www.apachecon.com/acna2022/index.html) - Oct 3-6, New Orleans, paid (one of the tracks is Search/Lucene)
 
 [Activate](https://www.activate-conf.com/) - Oct 27, online, paid
-
-### 2023
-
-[sigir](https://sigir.org/chiir2023/) - Mar 19-23'2023, Austin (Texas, USA), paid

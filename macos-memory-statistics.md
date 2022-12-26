@@ -8,7 +8,9 @@ Below is the script which I made after digging through lots of online forums, ex
 ## Code
 [download a script](resources/macos-memory-statistics.sh)
 
+<!--LISTING(resources/macos-memory-statistics.sh)-->
 ```shell
+#!/bin/bash
 #
 # Note: this script requires coreutils
 #
@@ -56,8 +58,8 @@ echo " - Wired memory: $(bytes_to_human_readable "$WIRED_BYTES")"
 echo " - Compressed memory: $(bytes_to_human_readable "$COMPRESSED_BYTES")"
 echo "File-backed: $(bytes_to_human_readable "$FILE_BYTES")"
 echo "Swap usage: $(bytes_to_human_readable "$SWAP_USAGE_BYTES")"
-
 ```
+<!--END LISTING-->
 
 ## Sample output:
 ```shell

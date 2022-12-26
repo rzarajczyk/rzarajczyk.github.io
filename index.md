@@ -4,6 +4,6 @@
 * [Ubuntu 22.04 initial setup](ubuntu-setup.md)
 * [Ubuntu 22.04 and Logitech MX Keys for Mac](logitech-mx-keys-ubuntu.md)
 * [Ubuntu 22.04 and Logitech MX Vertical](logitech-mx-vertical-ubuntu.md)
-* [Using multiple SSH keys in GitHub](github.md)
-  * [Interesting online tools](interesting-online-tools.md)
+* [Using SSH keys in GitHub (single or multiple)](github.md)
+* [Interesting online tools](interesting-online-tools.md)
 * [Inspiring online resources](inspirations.md)

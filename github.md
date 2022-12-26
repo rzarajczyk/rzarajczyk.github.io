@@ -1,11 +1,11 @@
-# Using single/multiple SSH keys in GitHub
+# Using SSH keys in GitHub (single or multiple)
 
-## Generate new SSH key
+## Generating new SSH key
 
 ```shell
 $ ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
-Note: generated SSH key should have access rights:
+Note: make sure the generated SSH key has correct access rights:
 ```shell
 chmod 600 ~/.ssh/<key>
 ```
@@ -14,44 +14,50 @@ chmod 600 ~/.ssh/<key>
 
 See [official GitHub tutorial](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 
+Make sure you upload **PUBLIC** key!
+
 ## Single SSH key setup
 
-`~/.ssh/config`
-
+Edit `~/.ssh/config` and put there the following content:
 ```text
 Host github.com
 	HostName github.com
 	User git
-	IdentityFile ~/.ssh/<key1>
+	IdentityFile ~/.ssh/<key>
 ```
+Replace `<key>` with your key name
+
 And that's it, you can clone your private repo
 
 ## Multiple SSH keys setup
 
 ### Modify `~/.ssh/config`
 
-`~/.ssh/config`
-
+Edit `~/.ssh/config` and put there the following content:
 ```text
-Host github.com-rzarajczyk
+Host github.com-<name>
 	HostName github.com
 	User git
-	IdentityFile ~/.ssh/<key1>
+	IdentityFile ~/.ssh/<key>
 ```
+Replace `<key>` with your key name
+Replace `<name>` with some unique name which will identify your accounts
 
 ### Set the appropriate origin url
 
 ```shell
 # Check current origin URL
 git config --get remote.origin.url
-> https://github.com/rzarajczyk/break-time.git
+> https://github.com/<repo-path>.git
 
 # Remove origin URL
 git remote remove origin
 
-# Add new origin URL
-git remote add origin github.com-rzarajczyk:/rzarajczyk/break-time.git 
+# Add new, modified origin URL
+git remote add origin github.com-<name>:/<repo-path>.git 
 ```
+Replace `<repo-path>` with the actual path to the repository, taken from `git config --get remote.origin.url`
+Replace `<name>` with the name you put in your `~/.ssh/config` file
 
 ### Set the appropriate user.name and user.email in the current repo
 

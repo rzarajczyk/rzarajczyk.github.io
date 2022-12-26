@@ -1,7 +1,7 @@
 # Ubuntu 22.04 and Logitech MX Keys for Mac
 
-The **Logitech MX Keys for Mac** keyboard workd generally fine in Ubuntu using a standard Bluetooth connection,
-however it has a bit different layout than the one Ubuntu expects.
+The **Logitech MX Keys for Mac** keyboard works generally fine in Ubuntu using a standard Bluetooth connection,
+however it has a bit different key layout than Ubuntu expects. 
 
 ## Switching places of Win and Alt keys (a.k.a. remapping Win/Alt keys)
 
@@ -16,20 +16,21 @@ This application allows to remap all recived keypresses. So basically start the 
 * `ISO Level3 Shift` into `Super_R` (note: this is the name of `Alt_R` detected on my setup. Honestly, I don't know why)
 * `Super_R` into `Alt_R` (yeap, here you can use `Alt_R` name)
 
-**Note on "`Super_L`" key**: Input Remapper is unable to capture Super_L ("Left Win") key, as it starts Gonme's launcher screen.
+**Note on `Super_L` key**: Input Remapper is unable to capture Super_L ("Left Win") key, as it starts Gonme's launcher screen.
 To avoid that, install **Gnome Tweaks** from Ubuntu Software and temporarily change launcher screen keyboard shortcut.
 
 ## Function keys without `fn`
 
-One - the simplest - way is to use FnLock. There's a `FnLock` button on the keyboard (usually it's written on the `Esc` key)
+One - **the simplest** - way is to use FnLock.
+There should be a `FnLock` button on the keyboard (usually it's written on the `Esc` key) - at least on Lenovo ThinkPad there is.
 
-Second option is to use Solaar:
+Alternatively you can use Solaar:
 ```shell
 sudo apt update && sudo apt install solaar
 ```
 After installing, open the app, select your keyboard and check "Swap Fx function"
 
-## Enabling PrintScreen button
+## `Eject` button as PrintScreen
 Logi MX Keys for Mac has a PrintScreen button located above the keypad `=` button - on the same key as F17. However I find it more handy to remap the Eject button to create screenshots.
 
 To do that, install Solaar:

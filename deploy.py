@@ -18,6 +18,7 @@ def update_code_block(match):
     with open(referenced_filename, 'r') as f:
         referenced_content = f.read()
     result = f"""<!--LISTING({referenced_filename})-->
+[download]({referenced_filename})
 ```{lang}
 {referenced_content}
 ```

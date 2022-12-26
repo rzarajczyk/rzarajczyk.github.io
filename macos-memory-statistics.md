@@ -6,9 +6,8 @@ same information as provided by Activity Monitor.
 Below is the script which I made after digging through lots of online forums, examples, support threads etc.
 
 ## Code
-[download a script](resources/macos-memory-statistics.sh)
-
 <!--LISTING(resources/macos-memory-statistics.sh)-->
+[download](resources/macos-memory-statistics.sh)
 ```shell
 #!/bin/bash
 #

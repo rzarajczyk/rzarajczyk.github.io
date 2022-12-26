@@ -3,10 +3,10 @@
 **Note:** Under construction!
 
 ## Logitech MX Keys for Mac in Ubuntu 22.04
-See [this description](logitech-mx-keys-ubuntu.md)
+See [this description](ubuntu-logitech-mx-keys.md)
 
 ## Logitech MX Vertical
-See [this description](logitech-mx-vertical-ubuntu.md)
+See [this description](ubuntu-logitech-mx-vertical.md)
   
 ## Background effects in MS Teams Linux
 

@@ -25,7 +25,6 @@ Host github.com
 	User git
 	IdentityFile ~/.ssh/<key>
 ```
-Replace `<key>` with your key name
 
 And that's it, you can clone your private repo
 
@@ -40,11 +39,11 @@ Host github.com-<name>
 	User git
 	IdentityFile ~/.ssh/<key>
 ```
-Replace `<key>` with your key name
-Replace `<name>` with some unique name which will identify your accounts
+Replace `<name>` with some unique name which will identify your accounts. It might be `account1`, but also f.ex. your username
 
 ### Set the appropriate origin url
 
+In the git repository:
 ```shell
 # Check current origin URL
 git config --get remote.origin.url
@@ -56,16 +55,17 @@ git remote remove origin
 # Add new, modified origin URL
 git remote add origin github.com-<name>:/<repo-path>.git 
 ```
-Replace `<repo-path>` with the actual path to the repository, taken from `git config --get remote.origin.url`
 Replace `<name>` with the name you put in your `~/.ssh/config` file
 
 ### Set the appropriate user.name and user.email in the current repo
+
+If you want to override your username and email in the repository, you can do it: 
 
 ```shell
 git config user.email "your_email@example.com"
 git config user.name "Your Name"
 ```
 
-Note: if you struggle with remembering if you have entered correct user.name and user.email in each of your repos, I
-recommend adding this information into command prompt -
+Note: if you struggle with remembering if you have entered correct `user.name` and `user.email`
+in each of your repos, I recommend adding this information into command prompt -
 see [Agnoster Theme with Git user display](macos-setup.md#agnoster-theme-with-git-user-display)

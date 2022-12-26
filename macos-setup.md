@@ -151,6 +151,7 @@ echo "Done, please reboot the system"
  * [coreutils](https://www.gnu.org/software/coreutils/) - GNU version of coreutils; MacOS is shipped with custom
 version of coreutils, which works not in the same way as the GNU ones
  * other software of my choice
+
 <!--LISTING(resources/macos-install-brew-coreutils.sh)-->
 [⬇️ download](resources/macos-install-brew-coreutils.sh)
 ```shell

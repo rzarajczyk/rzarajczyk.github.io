@@ -7,7 +7,7 @@
 * [My favorite MacOS initial setup](macos-setup.md)
 
 #### Ubuntu
-* [Ubuntu 22.04 initial setup](ubuntu-setup.md)
+* [My favorite Ubuntu 22.04 initial setup](ubuntu-setup.md)
 * [Ubuntu 22.04 and Logitech MX Keys for Mac](ubuntu-logitech-mx-keys.md)
 * [Ubuntu 22.04 and Logitech MX Vertical](ubuntu-logitech-mx-vertical.md)
 

@@ -1,8 +1,6 @@
-# Ubuntu on Lenovo ThinkPad initial setup
+# My favorite Ubuntu 22.04 initial setup
 
-**Note:** Under construction!
-
-## Logitech MX Keys for Mac in Ubuntu 22.04
+## Logitech MX Keys for Mac in Ubuntu
 See [this description](ubuntu-logitech-mx-keys.md)
 
 ## Logitech MX Vertical
@@ -10,7 +8,9 @@ See [this description](ubuntu-logitech-mx-vertical.md)
   
 ## Background effects in MS Teams Linux
 
-For some reason the MS Teams desktop client in Linux doesn't support background effects. The same applies to web client in Firefox. But the web client in Chrome does support them! So **simply use Chrome for Teams!**
+As of November 2022, for some reason the MS Teams desktop client in Linux
+doesn't support background effects. The same applies to web client in Firefox.
+But the web client in Chrome does support them! So **simply use Chrome for Teams!**
 
 ## OpenJDK 17, Docker, git installation + command line tools
 ```shell
@@ -78,7 +78,7 @@ pyenv global 3.10.7
   
 ## GUI Tools
 
-* [Google Chrome](https://www.google.pl/chrome) - Google Chrome
+* [Google Chrome](https://www.google.pl/chrome)
 * [Slack](https://slack.com/downloads/linux) - Slack (note: use DEB version; do not use Snap version, it's buggy!)
 * [KeePassXC](https://keepassxc.org/download/#linux) - password manager
 * [Shutter](https://shutter-project.org/downloads/third-party-packages/) - screenshooting tool. **Very limitted functionality with the Wayland displat manager**, but has a cool Drawing tool.
@@ -92,8 +92,9 @@ pyenv global 3.10.7
 
 ## OneDrive sync
 
-1. First, install this command line tool: https://github.com/abraunegg/onedrive
-2. Then, download this GUI tool: https://github.com/bpozdena/OneDriveGUI
+1. First, install this command line tool: [https://github.com/abraunegg/onedrive](https://github.com/abraunegg/onedrive)
+2. Then, download this GUI tool: [https://github.com/bpozdena/OneDriveGUI](https://github.com/bpozdena/OneDriveGUI)
 
-**Note:** GUI is not an installer - it's a executable that just runs :-) So probably you'd like to move it to some `~/bin` folder before running.
+**Note:** The GUI tool is not an installer - it's an executable that just runs :-)
+So probably you'd like to move it to some `~/bin` folder before running.
 

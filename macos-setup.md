@@ -149,7 +149,7 @@ echo "Done, please reboot the system"
 ## Homebrew & coreutils & command line tools installation
  * [Homebrew](https://brew.sh/) - must-have package manager for MacOS
  * [coreutils](https://www.gnu.org/software/coreutils/) - GNU version of coreutils; MacOS is shipped with custom
-version of coreutils, which works not in the same way as the GNU ones
+version of coreutils, which works in a slightly different way than the GNU ones
  * other software of my choice
 
 <!--LISTING(resources/macos-install-brew-coreutils.sh)-->
@@ -176,8 +176,10 @@ echo "Done, please reboot the system"
 
 ```
 <!--END LISTING-->
+
 ## Python installation
 Using [pyenv](https://github.com/pyenv/pyenv)
+
 <!--LISTING(resources/macos-install-python.sh)-->
 [⬇️ download](resources/macos-install-python.sh)
 ```shell

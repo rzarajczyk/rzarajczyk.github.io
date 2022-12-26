@@ -2,7 +2,7 @@
 The Logitech MX Vertical generally works fine in Ubuntu 22.04 out of the box.
 The only thing that doesn't work is the DPI button.
 
-Here I will show how to make the DPI button usable - it will show the `Activities` scree
+Here I will show how to make the DPI button usable - it will show the `Activities` screen
 (something similar to MacOS App Expose)
 
 ### Reacting on the DPI button
@@ -10,7 +10,7 @@ Here I will show how to make the DPI button usable - it will show the `Activitie
 The first problem to conquer is that the MX Vertical DPI button does not trigger a standard mouse event,
 but uses a proprietary Logitech protocol - and therefore cannot be handled by a standard Linux tools.
 
-Luckily, there's a software able to handle Logitech protocol in Linux - [Solaar](https://pwr-solaar.github.io/Solaar/).
+Luckily, there's a software able to handle it - [Solaar](https://pwr-solaar.github.io/Solaar/).
 
 So first of all, let's install it:
 ```shell
@@ -35,15 +35,12 @@ Now, let's put some useful code inside `/home/<user>/dpi-button.sh`.
 
 In my case I find it most useful to open an `Activities` screen, which shows all open windows.
 In fact Ubuntu will show `Activities` by default as a reaction to pressing the _Super_ key
-on the keyboard, so our job is in fact to emulate _Super_ key press. 
-
-First of all, we must switch Ubuntu to use _X.org_ instead of _Wayland_ as a display server.
-The following description is based on this thread: https://askubuntu.com/a/1354342
+on the keyboard, so our job is in fact to emulate _Super_ key press.
 
 #### Wayland version (preffered)
 If you're using Wayland as a display manager - which is probably the case, as Wayland is a default
 display manager in Ubuntu 22.04 - you need to install the `ydotool` tool. **Do not install if using apt**, 
-it's outdated! Instead, use the following instruction: https://askubuntu.com/a/1413830
+it's outdated (as of November 2022)! Instead, use the following instruction: [https://askubuntu.com/a/1413830](https://askubuntu.com/a/1413830)
 
 Then you can emulate pressing _Super_ (aka _Win_) key using the following command
 ```shell
@@ -56,7 +53,7 @@ To sum up, the `/home/<user>/dpi-button.sh` should look like this:
 ydotool key 125:1 125:0
 ```
 
-**Note:** if the ydotool doesn't work after the reboot, create a following file: `/home/rzarajczyk/.config/autostart/ydotoold.desktop`
+**Note:** if the ydotool doesn't work after the reboot, create a following file: `~/.config/autostart/ydotoold.desktop`
 with the following content:
 ```text
 [Desktop Entry]
@@ -73,6 +70,8 @@ Categories=GNOME;GTK;System;
 #### X.org version (fallback)
 If something goes wrong, you can use the alternative version - but it will require switching display manager
 to X.org (older display manager, it might have lower performance on 4K displays)
+
+The following description is based on this thread: https://askubuntu.com/a/1354342
 
 Edit the file `/etc/gdm3/custom.conf` and uncomment line:
 ```text

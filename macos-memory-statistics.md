@@ -7,9 +7,9 @@ Below is the script which I made after digging through lots of online forums, ex
 
 ## Code
 <!--LISTING(resources/macos-memory-statistics.sh)-->
-[download](resources/macos-memory-statistics.sh)
+[⬇️ download](resources/macos-memory-statistics.sh)
 ```shell
-#!/bin/bash
+#!/bin/zsh
 #
 # Note: this script requires coreutils
 #

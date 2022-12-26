@@ -1,4 +1,8 @@
-#!/bin/bash
+#!/bin/zsh
+if [[ $SHELL != '/bin/zsh' ]]; then
+  echo "Please set ZSH as your default shell" && exit 1
+fi
+
 brew install openjdk@11
 brew install openjdk@17
 sudo ln -sfn $(brew --prefix openjdk@11)/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk

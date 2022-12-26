@@ -1,8 +1,7 @@
-#!/bin/bash
+#!/bin/zsh
 FILEPATH=~/Library/LaunchAgents/pl.zarajczyk.TildeParagraphKeyRemappings.plist
 if [ -f $FILEPATH ]; then
-  echo "File $FILEPATH already exists"
-  exit 1
+  echo "File $FILEPATH already exists" && exit 1
 fi
 
 tee $FILEPATH << EOM

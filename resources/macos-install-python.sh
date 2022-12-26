@@ -1,4 +1,8 @@
-#!/bin/bash
+#!/bin/zsh
+if [[ $SHELL != '/bin/zsh' ]]; then
+  echo "Please set ZSH as your default shell" && exit 1
+fi
+
 # docs: https://github.com/pyenv/pyenv#basic-github-checkout
 
 brew install pyenv

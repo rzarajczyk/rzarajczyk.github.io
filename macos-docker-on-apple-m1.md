@@ -31,7 +31,7 @@ What's noteworthy:
  * ✅ Podman may be used together with the GUI tool: [Podman Desktop](https://podman-desktop.io/)
  * ✅ trivial installation
  * ❌ have it's own command line tool, which is very similar to docker (in fact Podman docs suggest creating an alias `alias docker=podman`),
-  but bot the same. If you use bash scripts for automating, they might be broken
+  but not the same. If you use bash scripts for automating, they might be broken
  * ❌ Podman driver for Minikube is experimental. While it is possible to configure podman correctly for Minikube, it's not as easy as it might
   look like - default setup doesn't work, you need to experiment with parameters to have your Minikube cluster running (in short: rootful + containerd)
  * ❌ Podman is not detected as a runtime environment for testcontainers and there's no official support. Google says that it should be possible

@@ -63,5 +63,5 @@ What's noteworthy:
  * ✅ Colima is also not detected as a runtime environment for testcontainers, but there's an [official support](https://www.testcontainers.org/supported_docker_environment/#using-colima) for it and it only requires two env variables to be set
  * ✅ image registry is the same as in Docker
 
-### Summary
+### Verdict
 While both Podman and Colima works fine, **for me Colima is much better tool** due to better compatibility with other software.

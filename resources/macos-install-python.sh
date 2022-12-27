@@ -6,8 +6,8 @@ fi
 # docs: https://github.com/pyenv/pyenv#basic-github-checkout
 
 brew install pyenv
-pyenv init --path
-pyenv init -
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
 echo 'eval "$(pyenv init --path)"' >> ~/.zprofile
 echo 'eval "$(pyenv init -)"' >> ~/.zshrc
 # choose newest, f.ex. 3.10.0

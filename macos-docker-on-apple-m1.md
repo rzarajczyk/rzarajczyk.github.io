@@ -42,7 +42,7 @@ What's noteworthy:
 ### Colima in brief
 ```shell
 ## Installation - see https://pet2cattle.com/2022/09/minikube-colima-macos-m1 and https://github.com/abiosoft/colima
-brew install docker docker-compose
+brew install docker docker-compose # Note: it does not install the Docker Engine, just Docker CLI
 mkdir -p ~/.docker/cli-plugins
 ln -sfn /opt/homebrew/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/docker-compose
 brew install colima

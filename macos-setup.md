@@ -149,7 +149,7 @@ echo "Done, please reboot the system"
 ## Homebrew & coreutils & command line tools installation
  * [Homebrew](https://brew.sh/) - must-have package manager for MacOS
  * [coreutils](https://www.gnu.org/software/coreutils/) - GNU version of coreutils; MacOS is shipped with custom
-version of coreutils, which works in a slightly different way than the GNU ones
+version of some of coreutils, but they work in a slightly different way than the GNU ones
  * other software of my choice
 
 <!--LISTING(resources/macos-install-brew-coreutils.sh)-->

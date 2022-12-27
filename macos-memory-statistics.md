@@ -10,11 +10,9 @@ Below is the script which I made after digging through lots of online forums, ex
 [⬇️ download](resources/macos-memory-statistics.sh)
 ```shell
 #!/bin/zsh
-#
-# Note: this script requires coreutils
-#
-# > brew install coreutils
-#
+if [ ! $(command -v numfmt) ]; then
+  echo "coreutils not installed. Please install it:\n\n    brew install coreutils\n" && exit 1
+fi
 
 VM_STAT=$(vm_stat | grep --ignore-case "pages")
 PAGE_SIZE_BYTES=$(vm_stat | head -n 1 | grep -oE "[0-9]+")

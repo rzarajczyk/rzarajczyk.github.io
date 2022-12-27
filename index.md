@@ -3,8 +3,9 @@
 * [Using SSH keys in GitHub (single or multiple)](it-github.md)
 
 #### MacOS
-* [Getting memory statistics from command line in MacOS](macos-memory-statistics.md)
 * [My favorite MacOS initial setup](macos-setup.md)
+* [Getting memory statistics from command line in MacOS](macos-memory-statistics.md)
+* [Docker withut Docker Desktop on Apple M1](macos-docker-on-apple-m1.md)
 
 #### Ubuntu
 * [My favorite Ubuntu 22.04 initial setup](ubuntu-setup.md)

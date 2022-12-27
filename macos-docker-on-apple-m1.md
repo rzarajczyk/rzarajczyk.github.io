@@ -65,3 +65,8 @@ What's noteworthy:
 
 ### Verdict
 While both Podman and Colima works fine, **for me Colima is much better tool** due to better compatibility with other software.
+
+# Part 2 - running images on Apple Silicon M1/M2 chip
+Apple Silicon M1/M2 chips use the `arm64` (a.k.a `aarch64`) architecture. This makes them different from the Intel chips, which are designed in `amd64` (a.k.a `x86_64`) architecture. Docker itself is a tool for virtualization, not emulation - it can create abstraction of the operating system, but cannot emulate different CPU.
+
+To fight this, docker images can contain different version of binaries for different architectures - but the publisher must intentionally append them to the image. Sometimes they do it, sometimes they don't.

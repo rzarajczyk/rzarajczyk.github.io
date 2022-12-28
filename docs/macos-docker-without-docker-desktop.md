@@ -6,10 +6,11 @@ While this is not a big deal if you're working on Linux (you can still use the o
 it became a problem on MacOS, because you have to install Docker Desktop to get Docker from Docker.
 
 However, there are free of charge alternatives:
+
  - [podman](https://podman.io/) - Apache License 2.0
  - [colima](https://github.com/abiosoft/colima) - MIT License
 
-### Podman in brief
+## Podman in brief
 Podman in brief:
 ```shell
 ## Installation, see https://podman.io/getting-started/installation for details
@@ -24,6 +25,7 @@ podman run hello-world:latest
 podman ps
 ```
 What's noteworthy:
+
  * ✅ it works
  * ✅ Podman may be used together with the GUI tool: [Podman Desktop](https://podman-desktop.io/)
  * ✅ trivial installation
@@ -36,7 +38,7 @@ What's noteworthy:
  * ❌ in some cases Podman use "aliases" for images. F.ex. `hello-world` is a different image than used by Docker. In my personal opinion,
   this brings some uncertainty about which image I'm trying to run.
   
-### Colima in brief
+## Colima in brief
 ```shell
 ## Installation - see https://pet2cattle.com/2022/09/minikube-colima-macos-m1 and https://github.com/abiosoft/colima
 brew install docker docker-compose # Note: this does not install the Docker Engine, just Docker CLI
@@ -52,6 +54,7 @@ docker run hello-world:latest
 docker ps
 ```
 What's noteworthy:
+
  * ✅ it works
  * ❌ no GUI/Desktop tool
  * 🔶 a bit more difficult installation (but come on, it's just a natural consequence of using the Docker CLI)
@@ -60,5 +63,5 @@ What's noteworthy:
  * ✅ Colima is also not detected as a runtime environment for testcontainers, but there's an [official support](https://www.testcontainers.org/supported_docker_environment/#using-colima) for it and it only requires two env variables to be set
  * ✅ image registry is the same as in Docker
 
-### Verdict: Colima is better
+## Verdict: Colima is better
 While both Podman and Colima works fine, **for me Colima is much better tool** due to better compatibility with other software.

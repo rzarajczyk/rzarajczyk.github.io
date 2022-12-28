@@ -5,7 +5,7 @@ The only thing that doesn't work is the DPI button.
 Here I will show how to make the DPI button usable - it will show the `Activities` screen
 (something similar to MacOS App Expose)
 
-### Reacting on the DPI button
+## Reacting on the DPI button
 
 The first problem to conquer is that the MX Vertical DPI button does not trigger a standard mouse event,
 but uses a proprietary Logitech protocol - and therefore cannot be handled by a standard Linux tools.
@@ -25,19 +25,19 @@ User-defined rules
     Key:      DPI Switch (00FD) (released)
     Execute:  /bin/bash /home/<user>/dpi-button.sh
 ```
-After this, each press of the DPI button on the mouse will execute a `/home/<user>/dpi-button.sh` script.
+After this, each press of the DPI button on the mouse will execute a `~/dpi-button.sh` script.
 
 **Note:** you can use any command to be executed in reaction to button click. I find using a custom script
 easier to maintain.
 
-### Showing Activities using command line in Ubuntu 22.04
-Now, let's put some useful code inside `/home/<user>/dpi-button.sh`.
+## Showing Activities using command line in Ubuntu 22.04
+Now, let's put some useful code inside `~/dpi-button.sh`.
 
 In my case I find it most useful to open an `Activities` screen, which shows all open windows.
 In fact Ubuntu will show `Activities` by default as a reaction to pressing the _Super_ key
 on the keyboard, so our job is in fact to emulate _Super_ key press.
 
-#### Wayland version (preffered)
+### Wayland version (preferred)
 If you're using Wayland as a display manager - which is probably the case, as Wayland is a default
 display manager in Ubuntu 22.04 - you need to install the `ydotool` tool. **Do not install if using apt**, 
 it's outdated (as of November 2022)! Instead, use the following instruction: [https://askubuntu.com/a/1413830](https://askubuntu.com/a/1413830)
@@ -47,15 +47,15 @@ Then you can emulate pressing _Super_ (aka _Win_) key using the following comman
 ydotool key 125:1 125:0
 ```
 
-To sum up, the `/home/<user>/dpi-button.sh` should look like this:
-```shell
+To sum up, the `~/dpi-button.sh` should look like this:
+```shell title="~/dpi-button.sh"
 #!/bin/bash
 ydotool key 125:1 125:0
 ```
 
 **Note:** if the ydotool doesn't work after the reboot, create a following file: `~/.config/autostart/ydotoold.desktop`
 with the following content:
-```text
+```text title="~/.config/autostart/ydotoold.desktop"
 [Desktop Entry]
 Type=Application
 Terminal=false
@@ -67,7 +67,7 @@ Categories=GNOME;GTK;System;
 ```
 
 
-#### X.org version (fallback)
+### X.org version (fallback)
 If something goes wrong, you can use the alternative version - but it will require switching display manager
 to X.org (older display manager, it might have lower performance on 4K displays)
 
@@ -86,8 +86,8 @@ xdotool key super
 ```
 And by default Ubuntu shows the `Activities` screen.
 
-To sum up, the `/home/<user>/dpi-button.sh` should look like this:
-```shell
+To sum up, the `~/dpi-button.sh` should look like this:
+```shell title="~/dpi-button.sh"
 #!/bin/bash
 xdotool key super
 ```

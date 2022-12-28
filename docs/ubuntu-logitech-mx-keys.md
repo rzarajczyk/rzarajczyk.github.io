@@ -11,6 +11,7 @@ sudo apt update && sudo apt install input-remapper
 ```
 
 This application allows to remap all recived keypresses. So basically start the application and create rules that remap:
+
 * `Alt_L` into `Super_L`
 * `Super_L` into `Alt_L`
 * `ISO Level3 Shift` into `Super_R` (note: this is the name of `Alt_R` detected on my setup. Honestly, I don't know why)

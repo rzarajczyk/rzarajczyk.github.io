@@ -6,45 +6,12 @@ If you're used to typing Polish characters using a key right next to
 spacebar (like on Windows/Linux), use the following script to switch
 places of right Command and Option
 
-<!--LISTING(resources/macos-switch-right-command-option.sh)-->
 [⬇️ download](resources/macos-switch-right-command-option.sh)
 ```shell
-#!/bin/zsh
-FILEPATH=~/Library/LaunchAgents/pl.zarajczyk.RightCommandOptionKeyRemappings.plist
-if [ -f $FILEPATH ]; then
-  echo "File $FILEPATH already exists" && exit 1
-fi
-
-tee $FILEPATH << EOM
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-    <key>Label</key>
-    <string>com.nanoant.KeyRemapping</string>
-    <key>ProgramArguments</key>
-    <array>
-        <string>/usr/bin/hidutil</string>
-        <string>property</string>
-        <string>--set</string>
-        <string>{"UserKeyMapping":
-    [
-        {"HIDKeyboardModifierMappingSrc":0x7000000e7,"HIDKeyboardModifierMappingDst":0x7000000e6},
-        {"HIDKeyboardModifierMappingSrc":0x7000000e6,"HIDKeyboardModifierMappingDst":0x7000000e7}
-    ]
-}</string>
-    </array>
-    <key>RunAtLoad</key>
-    <true/>
-</dict>
-</plist>
-EOM
-
-echo "Done, please reboot the system"
-
+--8<-- "resources/macos-switch-right-command-option.sh"
 ```
-<!--END LISTING-->
 Note:
+
 * `0x7000000e7` - right Command
 * `0x7000000e6` - right Option
 * other possibilities of key switching: [https://hidutil-generator.netlify.app/](https://hidutil-generator.netlify.app/)
@@ -53,45 +20,12 @@ Note:
 Switching places of tilde `~` and paragraph `§` buttons, 
 for people used to US keyboard layout forced to work on EU keyboard.
 
-<!--LISTING(resources/macos-switch-tilde-paragraph.sh)-->
 [⬇️ download](resources/macos-switch-tilde-paragraph.sh)
 ```shell
-#!/bin/zsh
-FILEPATH=~/Library/LaunchAgents/pl.zarajczyk.TildeParagraphKeyRemappings.plist
-if [ -f $FILEPATH ]; then
-  echo "File $FILEPATH already exists" && exit 1
-fi
-
-tee $FILEPATH << EOM
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-    <key>Label</key>
-    <string>com.nanoant.KeyRemapping</string>
-    <key>ProgramArguments</key>
-    <array>
-        <string>/usr/bin/hidutil</string>
-        <string>property</string>
-        <string>--set</string>
-        <string>{"UserKeyMapping":
-    [
-        {"HIDKeyboardModifierMappingSrc":0x700000064,"HIDKeyboardModifierMappingDst":0x700000035},
-        {"HIDKeyboardModifierMappingSrc":0x700000035,"HIDKeyboardModifierMappingDst":0x700000064}
-    ]
-}</string>
-    </array>
-    <key>RunAtLoad</key>
-    <true/>
-</dict>
-</plist>
-EOM
-
-echo "Done, please reboot the system"
-
+--8<-- "resources/macos-switch-tilde-paragraph.sh"
 ```
-<!--END LISTING-->
 Note:
+
 * `0x700000064` - button `§`
 * `0x700000035` - button `~` (tilde)
 * other possibilities of key switching: [https://hidutil-generator.netlify.app/](https://hidutil-generator.netlify.app/)
@@ -101,50 +35,16 @@ Note:
 On Windows pressing Home/End when entering a text in a website moves the caret position to the beginning/end of text field.
 On MacOS, it will scroll the entire webpage.
 
-<!--LISTING(resources/macos-home-end-buttons.sh)-->
 [⬇️ download](resources/macos-home-end-buttons.sh)
 ```shell
-#!/bin/bash
-FILEPATH=~/Library/KeyBindings/DefaultKeyBinding.dict
-if [ -f $FILEPATH ]; then
-  echo "File $FILEPATH already exists" && exit 1
-fi
-if [[ $SHELL != '/bin/zsh' ]]; then
-  echo "Please set ZSH as your default shell" && exit 1
-fi
-
-mkdir -p ~/Library/KeyBindings
-tee $FILEPATH << EOM
-{
-  "\UF729"  = moveToBeginningOfParagraph:; // home
-  "\UF72B"  = moveToEndOfParagraph:; // end
-  "$\UF729" = moveToBeginningOfParagraphAndModifySelection:; // shift-home
-  "$\UF72B" = moveToEndOfParagraphAndModifySelection:; // shift-end
-  "^\UF729" = moveToBeginningOfDocument:; // ctrl-home
-  "^\UF72B" = moveToEndOfDocument:; // ctrl-end
-  "^$\UF729" = moveToBeginningOfDocumentAndModifySelection:; // ctrl-shift-home
-  "^$\UF72B" = moveToEndOfDocumentAndModifySelection:; // ctrl-shift-end
-}
-EOM
-
-## Additional steps for iTerm2
-echo "bindkey '\e[H'    beginning-of-line" >> ~/.zshrc
-echo "bindkey '\e[F'    end-of-line" >> ~/.zshrc
-
-echo "Done, please reboot the system"
-
+--8<-- "resources/macos-home-end-buttons.sh"
 ```
-<!--END LISTING-->
 
 ## Key repeating on long key press
-<!--LISTING(resources/macos-key-repeating-on-long-press.sh)-->
 [⬇️ download](resources/macos-key-repeating-on-long-press.sh)
 ```shell
-#!/bin/zsh
-defaults write -g ApplePressAndHoldEnabled -bool false
-echo "Done, please reboot the system"
+--8<-- "resources/macos-key-repeating-on-long-press.sh"
 ```
-<!--END LISTING-->
 
 ## Homebrew & coreutils & command line tools installation
  * [Homebrew](https://brew.sh/) - must-have package manager for MacOS
@@ -152,84 +52,29 @@ echo "Done, please reboot the system"
 version of some of coreutils, but they work in a slightly different way than the GNU ones
  * other software of my choice
 
-<!--LISTING(resources/macos-install-brew-coreutils.sh)-->
 [⬇️ download](resources/macos-install-brew-coreutils.sh)
 ```shell
-#!/bin/zsh
-if [[ $SHELL != '/bin/zsh' ]]; then
-  echo "Please set ZSH as your default shell" && exit 1
-fi
-
-if [ $(command -v brew) ]; then
-  echo "brew already installed"
-else
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"  ## from https://brew.sh/
-  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
-brew install coreutils
-brew install watch
-brew install wget
-brew install screen
-echo 'PATH="'$(brew --prefix coreutils)'/libexec/gnubin:$PATH"' >> ~/.zshrc
-echo "Done, please reboot the system"
-
+--8<-- "resources/macos-install-brew-coreutils.sh"
 ```
-<!--END LISTING-->
 
 ## Python installation
 Using [pyenv](https://github.com/pyenv/pyenv)
 
-<!--LISTING(resources/macos-install-python.sh)-->
 [⬇️ download](resources/macos-install-python.sh)
 ```shell
-#!/bin/zsh
-if [[ $SHELL != '/bin/zsh' ]]; then
-  echo "Please set ZSH as your default shell" && exit 1
-fi
-
-# docs: https://github.com/pyenv/pyenv#basic-github-checkout
-
-brew install pyenv
-pyenv init --path
-pyenv init -
-echo 'eval "$(pyenv init --path)"' >> ~/.zprofile
-echo 'eval "$(pyenv init -)"' >> ~/.zshrc
-# choose newest, f.ex. 3.10.0
-NEWEST=$(pyenv install --list | grep -E "^\s*\d+\.\d+\.\d+$" | sort -V | tail -n 1 | xargs -I{} echo {})
-echo "Will install Python $NEWEST as default"
-pyenv install "$NEWEST"
-# use it
-pyenv global "$NEWEST"
-# verify
-python --version
-echo "Done, please reboot the system"
-
+--8<-- "resources/macos-install-python.sh"
 ```
-<!--END LISTING-->
 
 ## Java installation (JDK 11 and 17 at once)
-<!--LISTING(resources/macos-install-java.sh)-->
 [⬇️ download](resources/macos-install-java.sh)
 ```shell
-#!/bin/zsh
-if [[ $SHELL != '/bin/zsh' ]]; then
-  echo "Please set ZSH as your default shell" && exit 1
-fi
-
-brew install openjdk@11
-brew install openjdk@17
-sudo ln -sfn $(brew --prefix openjdk@11)/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
-sudo ln -sfn $(brew --prefix openjdk@17)/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk
-echo 'alias java11="export JAVA_HOME=$(/usr/libexec/java_home -v 11); java -version"' >> ~/.zshrc
-echo 'alias java17="export JAVA_HOME=$(/usr/libexec/java_home -v 17); java -version"' >> ~/.zshrc
-
+--8<-- "resources/macos-install-java.sh"
 ```
-<!--END LISTING-->
 
 ## Docker
 
 See:
+
 * [Docker without Docker Desktop on MacOS](macos-docker-without-docker-desktop.md)
 * [Running amd64 Docker images on Apple M1/M2](macos-running-amd64-images-on-apple-m1.md)
 

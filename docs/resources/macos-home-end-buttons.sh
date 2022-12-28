@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 FILEPATH=~/Library/KeyBindings/DefaultKeyBinding.dict
 if [ -f $FILEPATH ]; then
   echo "File $FILEPATH already exists" && exit 1

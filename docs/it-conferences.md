@@ -1,6 +1,8 @@
 Note: the lists below are far from being complete :-)
 
-# JVM related conferences
+# Conferences
+
+## JVM related conferences
 
 ### 2023
 
@@ -54,7 +56,7 @@ Note: the lists below are far from being complete :-)
 
 [4developers Łódź](https://4developers.org.pl/) - Nov 29, Łódź, paid
 
-# Search-related conferences
+## Search-related conferences
 
 ### 2023
 

@@ -1,3 +1,10 @@
+---
+hide:
+- navigation
+- toc
+---
+# Welcome
+
 #### General IT
 * [Java and Search Conferences](it-conferences.md)
 * [Using SSH keys in GitHub (single or multiple)](it-github.md)

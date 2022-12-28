@@ -13,7 +13,7 @@ doesn't support background effects. The same applies to web client in Firefox.
 But the web client in Chrome does support them! So **simply use Chrome for Teams!**
 
 ## OpenJDK 17, Docker, git installation + command line tools
-```shell
+```bash
 sudo apt update
   
 sudo apt install -y openjdk-17-jdk

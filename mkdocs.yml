@@ -2,3 +2,44 @@ site_name: "Rafał Zarajczyk"
 site_url: "http://rzarajczyk.github.io"
 theme:
   name: material
+nav:
+  - index.md
+  - 'General IT':
+    - 'it-conferences.md'
+    - 'it-github.md'
+  - 'MacOS':
+    - 'macos-setup.md'
+    - 'macos-memory-statistics.md'
+    - 'macos-docker-without-docker-desktop.md'
+    - 'macos-running-amd64-images-on-apple-m1.md'
+  - 'Ubuntu':
+    - 'ubuntu-setup.md'
+    - 'ubuntu-logitech-mx-keys.md'
+    - 'ubuntu-logitech-mx-vertical.md'
+  - 'Off-topic':
+    - 'offtopic-interesting-online-tools.md'
+    - 'offtopic-inspirations.md'
+extra:
+  analytics:
+    provider: google
+    property: UA-18093684-8
+  consent:
+    title: We're collecting traffic stats in 🍪 cookies
+    description: >-
+      <p>We're using Google Analytics for collecting traffic statistics.<br>
+      If you want to know the details, check out this link: <a href="http://www.google.com/policies/technologies/types/" target="_blank">Cookies used by Google</a></p>
+      <p>We're not using any other cookies.</p>
+      <p>You can turn off Google Analytics cookie by disabling cookies in your browser:
+      <a href="https://support.google.com/accounts/answer/61416?hl=en&co=GENIE.Platform%3DDesktop" target="_blank">How to disable cookies</a></p>
+    actions:
+      - accept
+copyright: Copyright &copy; 2020 - 2023 Rafał Zarajczyk
+plugins:
+  - search
+markdown_extensions:
+  - admonition
+  - tables
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.snippets:
+      base_path: 'docs/'

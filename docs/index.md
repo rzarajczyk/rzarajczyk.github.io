@@ -16,5 +16,3 @@
 #### Off-topic
 * [Interesting online tools](offtopic-interesting-online-tools.md)
 * [Inspiring online resources](offtopic-inspirations.md)
-
-#### -

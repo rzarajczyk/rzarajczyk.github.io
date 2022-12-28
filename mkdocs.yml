@@ -1,0 +1,4 @@
+site_name: "Rafał Zarajczyk"
+site_url: "http://rzarajczyk.github.io"
+theme:
+  name: material

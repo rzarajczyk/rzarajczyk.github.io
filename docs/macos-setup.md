@@ -231,7 +231,7 @@ echo 'alias java17="export JAVA_HOME=$(/usr/libexec/java_home -v 17); java -vers
 
 See:
 * [Docker without Docker Desktop on MacOS](macos-docker-without-docker-desktop.md)
-* [Running amd64 Docker images on Apple M1/M2](macos-running-amd64-images-on-apple-m1)
+* [Running amd64 Docker images on Apple M1/M2](macos-running-amd64-images-on-apple-m1.md)
 
 
 ## Disable "drag to top" opening Mission Controll

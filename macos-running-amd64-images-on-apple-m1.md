@@ -7,6 +7,8 @@ of the operating system, but cannot emulate different CPU.
 Docker images can contain different binaries for different architectures - but the publisher must intentionally append them to the image.
 Sometimes they do it, sometimes they don't.
 
+[![macos-dockerhub-architectures.png](resources/macos-dockerhub-architectures.png)](resources/macos-dockerhub-architectures.png)
+
 So now the question is: **how to run `amd64` image on Apple M1?**
 
 ### Best Option: use different image

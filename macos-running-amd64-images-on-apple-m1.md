@@ -13,13 +13,14 @@ So now the question is: **how to run `amd64` image on Apple M1?**
 
 ### Best Option: use different image
 
-This is realy the easiest and best solution. Most of the well-known software comes in different images from different publishers,
+This is really the easiest and best solution. Most of the well-known software comes in different images from different publishers,
 if you can't run one on them - just use others.
 
 ### (Not an) Option 2: wait till Rosetta support is there
 
-Well this is not a real option, but there's an issue [https://github.com/docker/roadmap/issues/384](https://github.com/docker/roadmap/issues/384)
-do add the Apple's [Rosetta 2](https://en.wikipedia.org/wiki/Rosetta_(software)) emulator for Docker Desktop for Mac. But it's just an open
+Well this is not a real option, but there's an issue
+[https://github.com/docker/roadmap/issues/384](https://github.com/docker/roadmap/issues/384) to add the Apple's
+[Rosetta 2](https://en.wikipedia.org/wiki/Rosetta_(software)) emulator for Docker Desktop for Mac. But it's just an open
 issue, no commitments have been made.
 
 ### Option 3: use CPU-emulation and install it on a virtual machine

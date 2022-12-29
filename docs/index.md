@@ -6,7 +6,8 @@ hide:
 # Welcome
 
 #### General IT
-* [Java and Search Conferences](it-conferences.md)
+* [JVM-related Conferences](it-jvm-conferences.md)
+* [Search-related Conferences](it-jvm-conferences.md)
 * [Using SSH keys in GitHub (single or multiple)](it-github.md)
 
 #### MacOS
@@ -23,3 +24,7 @@ hide:
 #### Off-topic
 * [Interesting online tools](offtopic-interesting-online-tools.md)
 * [Inspiring online resources](offtopic-inspirations.md)
+
+---
+
+Disclaimer: [no warranties given](no-warranties.md)

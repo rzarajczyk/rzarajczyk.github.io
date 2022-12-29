@@ -1,10 +1,11 @@
-Note: the lists below are far from being complete :-)
+# JVM-related conferences
 
-# Conferences
+!!! note
+    
+    This lists is far from being complete :-)
 
-## JVM related conferences
 
-### 2023
+## 2023
 
 [Warszawskie Dni Informatyki](https://warszawskiedniinformatyki.pl/) - Apr 1-2, online + Warsaw, paid (?)
 
@@ -14,7 +15,7 @@ Note: the lists below are far from being complete :-)
 
 [Devoxx UK](https://www.devoxx.co.uk/) - May 10-12, London, paid
 
-### 2022
+## 2022
 
 [4developers](https://4developers.org.pl/4developers-2022-online/) - Apr 4-7, online, paid
 
@@ -55,19 +56,3 @@ Note: the lists below are far from being complete :-)
 [4developers Wrocław](https://4developers.org.pl/) - Nov 08, Wrocław, paid
 
 [4developers Łódź](https://4developers.org.pl/) - Nov 29, Łódź, paid
-
-## Search-related conferences
-
-### 2023
-
-[sigir](https://sigir.org/chiir2023/) - Mar 19-23'2023, Austin (Texas, USA), paid
-
-### 2022
-
-[Berlin Buzzwords](https://2022.berlinbuzzwords.de/) - June 12-14, Berlin, paid
-
-[Haystack Berlin](https://haystackconf.com/) - Sep 27, Berlin. Paid
-
-[ApacheCon North America](https://www.apachecon.com/acna2022/index.html) - Oct 3-6, New Orleans, paid (one of the tracks is Search/Lucene)
-
-[Activate](https://www.activate-conf.com/) - Oct 27, online, paid

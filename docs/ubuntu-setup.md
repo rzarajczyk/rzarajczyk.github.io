@@ -95,6 +95,8 @@ pyenv global 3.10.7
 1. First, install this command line tool: [https://github.com/abraunegg/onedrive](https://github.com/abraunegg/onedrive)
 2. Then, download this GUI tool: [https://github.com/bpozdena/OneDriveGUI](https://github.com/bpozdena/OneDriveGUI)
 
-**Note:** The GUI tool is not an installer - it's an executable that just runs :-)
-So probably you'd like to move it to some `~/bin` folder before running.
+!!! info
+
+    **Note:** The OneDriveGUI tool is not an installer - it's an executable that just runs :-)
+    So probably you'd like to move it to some `~/bin` folder before running.
 

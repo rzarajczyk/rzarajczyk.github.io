@@ -5,6 +5,10 @@ same information as provided by Activity Monitor.
 
 Below is the script which I made after digging through lots of online forums, examples, support threads etc.
 
+!!! info "Compatibility"
+
+    Manually tested on MacOS `Monterey` and MacOS `Ventura`
+
 ## Code
 [⬇️ download](resources/macos-memory-statistics.sh)
 ```shell
@@ -40,8 +44,3 @@ On my machine running MacOS Monterey, during my manual tests, the data correctne
  | Compressed memory | 100%        |
  | File-backed       | 66%         |
  | Swap usage        | 100%        |
-
-## Compatibility
-Manually tested on:
- * MacOS `Monterey`
- * MacOS `Ventura`

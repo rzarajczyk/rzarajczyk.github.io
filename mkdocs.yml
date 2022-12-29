@@ -5,7 +5,8 @@ theme:
 nav:
   - index.md
   - 'General IT':
-    - 'it-conferences.md'
+    - 'it-jvm-conferences.md'
+    - 'it-search-conferences.md'
     - 'it-github.md'
   - 'MacOS':
     - 'macos-setup.md'
@@ -33,7 +34,7 @@ extra:
       <a href="https://support.google.com/accounts/answer/61416?hl=en&co=GENIE.Platform%3DDesktop" target="_blank">How to disable cookies</a></p>
     actions:
       - accept
-copyright: Copyright &copy; 2020 - 2023 Rafał Zarajczyk
+copyright: Copyright &copy; 2020 - 2023 Rafał Zarajczyk - <a href="no-warranties">no warranties given</a>
 plugins:
   - search
 markdown_extensions:

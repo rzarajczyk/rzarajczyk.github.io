@@ -37,10 +37,19 @@ In my case I find it most useful to open an `Activities` screen, which shows all
 In fact Ubuntu will show `Activities` by default as a reaction to pressing the _Super_ key
 on the keyboard, so our job is in fact to emulate _Super_ key press.
 
-### Wayland version (preferred)
+The exact way of achieving it depends on the display manager you're using.
+
+!!! info "How to check which display manager is used"
+
+    ```shell
+    # Checking which display manager is used 
+    echo $XDG_SESSION_TYPE
+    ```
+
+### Wayland version (default)
 If you're using Wayland as a display manager - which is probably the case, as Wayland is a default
 display manager in Ubuntu 22.04 - you need to install the `ydotool` tool. **Do not install if using apt**, 
-it's outdated (as of November 2022)! Instead, use the following instruction: [https://askubuntu.com/a/1413830](https://askubuntu.com/a/1413830)
+it's outdated and buggy (as of November 2022)! Instead, use the following instruction: [https://askubuntu.com/a/1413830](https://askubuntu.com/a/1413830)
 
 Then you can emulate pressing _Super_ (aka _Win_) key using the following command
 ```shell
@@ -67,20 +76,22 @@ Categories=GNOME;GTK;System;
 ```
 
 
-### X.org version (fallback)
-If something goes wrong, you can use the alternative version - but it will require switching display manager
-to X.org (older display manager, it might have lower performance on 4K displays)
+### X.org version
+While X.org is not the default display manager in Ubuntu 22.04, however it's still available and possible to use.
 
-The following description is based on this thread: https://askubuntu.com/a/1354342
+!!! info "How to change Ubuntu 22.04 display manager to X.org"
 
-Edit the file `/etc/gdm3/custom.conf` and uncomment line:
-```text
-#WaylandEnable=false  
-```
-Reboot
+    Source: [https://askubuntu.com/a/1354342](https://askubuntu.com/a/1354342)
 
-Now, when Ubuntu is using _X.org_ (you can check it using `echo $XDG_SESSION_TYPE` command),
-you can use the following command to emulate pressing _Super_ (aka _Win_) key on the keyboard:
+    Edit the file `/etc/gdm3/custom.conf` and uncomment line:
+    ```text
+    #WaylandEnable=false  
+    ```
+    Reboot
+
+    Note that if you're using X.org, you might encounter lower performance on 4K displays.
+
+If you're using X.org, use the following command to emulate pressing _Super_ (aka _Win_) key on the keyboard:
 ```shell
 xdotool key super
 ```

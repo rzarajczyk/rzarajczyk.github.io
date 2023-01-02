@@ -4,10 +4,11 @@ theme:
   name: material
 nav:
   - index.md
-  - 'General IT':
+  - 'General':
     - 'it-jvm-conferences.md'
     - 'it-search-conferences.md'
     - 'it-github.md'
+    - 'offtopic-interesting-online-tools.md'
   - 'MacOS':
     - 'macos-setup.md'
     - 'macos-memory-statistics.md'
@@ -17,8 +18,6 @@ nav:
     - 'ubuntu-setup.md'
     - 'ubuntu-logitech-mx-keys.md'
     - 'ubuntu-logitech-mx-vertical.md'
-  - 'Off-topic':
-    - 'offtopic-interesting-online-tools.md'
 extra:
   analytics:
     provider: google

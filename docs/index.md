@@ -5,10 +5,11 @@ hide:
 ---
 # Welcome
 
-#### General IT
+#### General
 * [JVM-related Conferences](it-jvm-conferences.md)
 * [Search-related Conferences](it-jvm-conferences.md)
 * [Using SSH keys in GitHub (single or multiple)](it-github.md)
+* [Interesting and inspiring online resources](offtopic-interesting-online-tools.md)
 
 #### MacOS
 * [My favorite MacOS initial setup](macos-setup.md)
@@ -20,9 +21,6 @@ hide:
 * [My favorite Ubuntu 22.04 initial setup](ubuntu-setup.md)
 * [Ubuntu 22.04 and Logitech MX Keys for Mac](ubuntu-logitech-mx-keys.md)
 * [Ubuntu 22.04 and Logitech MX Vertical](ubuntu-logitech-mx-vertical.md)
-
-#### Off-topic
-* [Interesting and inspiring online resources](offtopic-interesting-online-tools.md)
 
 ---
 

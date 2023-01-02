@@ -2,7 +2,7 @@
 
 !!! note
     
-    This lists is far from being complete :-)
+    This lists is far from being complete!
 
 
 ## 2023

@@ -6,10 +6,10 @@ hide:
 # Welcome
 
 #### General
-* [JVM-related Conferences](it-jvm-conferences.md)
-* [Search-related Conferences](it-jvm-conferences.md)
-* [Using SSH keys in GitHub (single or multiple)](it-github.md)
-* [Interesting and inspiring online resources](offtopic-interesting-online-tools.md)
+* [JVM-related Conferences](general-jvm-conferences.md)
+* [Search-related Conferences](general-jvm-conferences.md)
+* [Using SSH keys in GitHub (single or multiple)](general-github.md)
+* [Interesting and inspiring online resources](general-interesting-online-tools.md)
 
 #### MacOS
 * [My favorite MacOS initial setup](macos-setup.md)

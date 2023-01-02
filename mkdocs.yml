@@ -7,10 +7,10 @@ theme:
 nav:
   - index.md
   - 'General':
-    - 'it-jvm-conferences.md'
-    - 'it-search-conferences.md'
-    - 'it-github.md'
-    - 'offtopic-interesting-online-tools.md'
+    - 'general-jvm-conferences.md'
+    - 'general-search-conferences.md'
+    - 'general-github.md'
+    - 'general-interesting-online-tools.md'
   - 'MacOS':
     - 'macos-setup.md'
     - 'macos-memory-statistics.md'

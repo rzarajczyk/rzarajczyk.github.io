@@ -5,18 +5,20 @@ everything I write here is true (at the moment of writing) and that all the code
 is correct before uploading it. 
 
 :white_check_mark: You can use knowledge and resources from this website completely free of charge,
-in any way you want, both privately and for commercial usage.
+in any way you want, for both private and commercial usage.
 I will be grateful for mentioning/sharing this website if you find it helpful,
 but it's not a hard requirement.
 
-:stop_sign: I might have, however, made some mistake. I might have had incomplete or even incorrect
-information by myself before writing them. Facts might have outdated.
+:stop_sign: I might have, however, made some mistake. I might have had incomplete or incorrect
+information. Some knowledge might have outdated. My laptop setup might have been different than yours.
+
+Therefore:
 
 **:warning::warning::warning: I do not give any warranties nor take any responsibility for information and resources
 on this website**. 
 
 :computer: In case of scripts, you take it as is, you can read the code, and you
-decide whether to run in on your own risk or not.
+decide whether to run it or not - on your own risk.
 
 :books: In case of knowledge, you are encouraged to reconfirm the information in the other sources
 (in fact this advice should apply to all the internet knowledge :-)), taking into

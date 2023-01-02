@@ -37,6 +37,8 @@ extra:
 copyright: Copyright &copy; 2020 - 2023 Rafał Zarajczyk - <a href="/no-warranties">no warranties given! - license</a>
 plugins:
   - search
+  - glightbox:
+      draggable: false
 markdown_extensions:
   - admonition
   - tables

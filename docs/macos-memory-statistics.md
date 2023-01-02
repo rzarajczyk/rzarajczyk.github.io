@@ -33,7 +33,7 @@ Swap usage: 659K
 
 On my machine running MacOS Monterey, during my manual tests, the data correctness is as follows:
 
-[![Parity between the script and the Activity Monitor](resources/macos-memory-statistics-parity.png)](resources/macos-memory-statistics-parity.png)
+![Parity between the script and the Activity Monitor](resources/macos-memory-statistics-parity.png)
 
 | Gauge             | Correctness |
 |-------------------|-------------|

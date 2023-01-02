@@ -26,16 +26,16 @@ podman ps
 ```
 What's noteworthy:
 
- * ✅ it works
- * ✅ Podman may be used together with the GUI tool: [Podman Desktop](https://podman-desktop.io/)
- * ✅ trivial installation
- * ❌ have its own command line tool, which is very similar to docker (in fact Podman docs suggest creating an alias `alias docker=podman`),
+ * :white_check_mark: it works
+ * :white_check_mark: Podman may be used together with the GUI tool: [Podman Desktop](https://podman-desktop.io/)
+ * :white_check_mark: trivial installation
+ * :x: have its own command line tool, which is very similar to docker (in fact Podman docs suggest creating an alias `alias docker=podman`),
   but not the same. If you use bash scripts for automating, they might be broken
- * ❌ Podman driver for Minikube is experimental. While it is possible to configure podman correctly for Minikube, it's not as easy as it might
+ * :x: Podman driver for Minikube is experimental. While it is possible to configure podman correctly for Minikube, it's not as easy as it might
   look like - default setup doesn't work, you need to experiment with parameters to have your Minikube cluster running (in short: rootful + containerd)
- * ❌ Podman is not detected as a runtime environment for testcontainers and there's no official support. Google says that it should be possible
+ * :x: Podman is not detected as a runtime environment for testcontainers and there's no official support. Google says that it should be possible
   to have it working, but requires some more additional steps (ssh'ing into Podman VM and socket tunneling)
- * ❌ in some cases Podman use "aliases" for images. F.ex. `hello-world` is a different image than used by Docker. In my personal opinion,
+ * :x: in some cases Podman use "aliases" for images. F.ex. `hello-world` is a different image than used by Docker. In my personal opinion,
   this brings some uncertainty about which image I'm trying to run.
   
 ## Colima in brief
@@ -55,13 +55,13 @@ docker ps
 ```
 What's noteworthy:
 
- * ✅ it works
- * ❌ no GUI/Desktop tool
- * 🔶 a bit more difficult installation (but come on, it's just a natural consequence of using the Docker CLI)
- * ✅ uses the Docker CLI. All your automation scripts should work fine
- * ✅ there's no separate Colima driver for Minikube, but the Docker driver works just fine.
- * ✅ Colima is also not detected as a runtime environment for testcontainers, but there's an [official support](https://www.testcontainers.org/supported_docker_environment/#using-colima) for it and it only requires two env variables to be set
- * ✅ image registry is the same as in Docker
+ * :white_check_mark: it works
+ * :x: no GUI/Desktop tool
+ * :large_orange_diamond: a bit more difficult installation (but come on, it's just a natural consequence of using the Docker CLI)
+ * :white_check_mark: uses the Docker CLI. All your automation scripts should work fine
+ * :white_check_mark: there's no separate Colima driver for Minikube, but the Docker driver works just fine.
+ * :white_check_mark: Colima is also not detected as a runtime environment for testcontainers, but there's an [official support](https://www.testcontainers.org/supported_docker_environment/#using-colima) for it and it only requires two env variables to be set
+ * :white_check_mark: image registry is the same as in Docker
 
 ## Verdict: Colima is better
 While both Podman and Colima works fine, **for me Colima is much better tool** due to better compatibility with other software.

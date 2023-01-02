@@ -6,6 +6,6 @@ Rafal Zarajczyk, [zarajczyk.pl](https://zarajczyk.pl)
 ```shell
 python -m venv venv
 source venv/bin/activate
-pip install -f requirements.txt
+pip install -r requirements.txt
 mkdocs serve
 ```

@@ -2,6 +2,8 @@ site_name: "Rafał Zarajczyk"
 site_url: "http://rzarajczyk.github.io"
 theme:
   name: material
+  logo: "https://zarajczyk.pl/rafal/favicon.ico"
+  favicon: "https://zarajczyk.pl/rafal/favicon.ico"
 nav:
   - index.md
   - 'General':
@@ -32,7 +34,7 @@ extra:
       <a href="https://support.google.com/accounts/answer/61416?hl=en&co=GENIE.Platform%3DDesktop" target="_blank">How to disable cookies</a></p>
     actions:
       - accept
-copyright: Copyright &copy; 2020 - 2023 Rafał Zarajczyk - <a href="/no-warranties">no warranties given</a>
+copyright: Copyright &copy; 2020 - 2023 Rafał Zarajczyk - <a href="/no-warranties">no warranties given! - license</a>
 plugins:
   - search
 markdown_extensions:
@@ -42,3 +44,6 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.snippets:
       base_path: 'docs/'
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg

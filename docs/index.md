@@ -24,4 +24,4 @@ hide:
 
 ---
 
-Disclaimer: [no warranties given](no-warranties.md)
+Disclaimer: [no warranties given! - license](license.md)

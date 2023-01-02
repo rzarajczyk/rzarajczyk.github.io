@@ -4,7 +4,7 @@
 everything I write here is true (at the moment of writing) and that all the code
 is correct before uploading it. 
 
-:heart: You can use knowledge and resources from this website completely free of charge,
+:white_check_mark: You can use knowledge and resources from this website completely free of charge,
 in any way you want, both privately and for commercial usage.
 I will be grateful for mentioning/sharing this website if you find it helpful,
 but it's not a hard requirement.

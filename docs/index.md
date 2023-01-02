@@ -7,9 +7,10 @@ hide:
 
 #### General
 * [JVM-related Conferences](general-jvm-conferences.md)
-* [Search-related Conferences](general-jvm-conferences.md)
+* [Search-related Conferences](general-search-conferences.md)
 * [Using SSH keys in GitHub (single or multiple)](general-github.md)
 * [Interesting and inspiring online resources](general-interesting-online-tools.md)
+* [Biased random algorithm](general-biased-random.md)
 
 #### MacOS
 * [My favorite MacOS initial setup](macos-setup.md)

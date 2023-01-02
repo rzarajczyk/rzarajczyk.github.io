@@ -22,8 +22,7 @@ hide:
 * [Ubuntu 22.04 and Logitech MX Vertical](ubuntu-logitech-mx-vertical.md)
 
 #### Off-topic
-* [Interesting online tools](offtopic-interesting-online-tools.md)
-* [Inspiring online resources](offtopic-inspirations.md)
+* [Interesting and inspiring online resources](offtopic-interesting-online-tools.md)
 
 ---
 

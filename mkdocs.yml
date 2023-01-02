@@ -19,7 +19,6 @@ nav:
     - 'ubuntu-logitech-mx-vertical.md'
   - 'Off-topic':
     - 'offtopic-interesting-online-tools.md'
-    - 'offtopic-inspirations.md'
 extra:
   analytics:
     provider: google

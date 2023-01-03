@@ -16,14 +16,45 @@ So now the question is: **how to run `amd64` image on Apple M1?**
 This is really the easiest and best solution. Most of the well-known software comes in different images from different publishers,
 if you can't run one on them - just use others.
 
-## (Not an) Option 2: wait till Rosetta support is there
+## Option 2: Experiment with colima platform emulation support
+
+If you're using colima (see [MacOS: Docker without Docker Desktop](macos-docker-without-docker-desktop.md)) as Docker runtime environment,
+you can use a platform emulation support which is build-in colima.
+
+Take a look:
+```shell
+$ colima start
+$ colima status
+INFO[0000] colima is running using QEMU
+INFO[0000] arch: aarch64
+INFO[0000] runtime: docker
+INFO[0000] mountType: 9p
+INFO[0000] socket: unix:///Users/rafal.zarajczyk/.colima/default/docker.sock
+$ docker run ubuntu:latest uname -a
+Linux 6d3b17834140 5.15.82-0-virt #1-Alpine SMP Mon, 12 Dec 2022 09:15:17 +0000 aarch64 aarch64 aarch64 GNU/Linux
+
+$ colima delete
+$ colima start --vm-type vz --arch x86_64
+$ colima status
+INFO[0000] colima is running using macOS Virtualization.Framework
+INFO[0000] arch: x86_64
+INFO[0000] runtime: docker
+INFO[0000] mountType: virtiofs
+INFO[0000] socket: unix:///Users/rafal.zarajczyk/.colima/default/docker.sock
+$ docker run ubuntu:latest uname -a
+Linux 52575d133979 5.15.82-0-virt #1-Alpine SMP Mon, 12 Dec 2022 09:15:17 +0000 x86_64 x86_64 x86_64 GNU/Linux
+```
+
+## (Not an) Option 3: wait till Rosetta support is there in Docker Desktop
 
 Well this is not a real option, but there's an issue
 [https://github.com/docker/roadmap/issues/384](https://github.com/docker/roadmap/issues/384) to add the Apple's
 [Rosetta 2](https://en.wikipedia.org/wiki/Rosetta_(software)) emulator for Docker Desktop for Mac. But it's just an open
 issue, no commitments have been made.
 
-## Option 3: use CPU-emulation and install it on a virtual machine
+BTW. You have to use the official Docker Desktop
+
+## Option 4: manually set up the CPU emulation and install Docker on a virtual machine
 
 Use the [UTM](https://mac.getutm.app/) virtual machine manager for MacOS, create a virtual machine in **emulation** mode,
 install Ubuntu Server on it and run your image there. This works, but:

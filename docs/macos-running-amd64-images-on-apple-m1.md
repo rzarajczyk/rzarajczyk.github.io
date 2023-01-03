@@ -23,6 +23,7 @@ you can use a platform emulation support which is build-in colima.
 
 Take a look:
 ```shell
+# Starting non-emulated environment - aarch64
 $ colima start
 $ colima status
 INFO[0000] colima is running using QEMU
@@ -32,8 +33,9 @@ INFO[0000] mountType: 9p
 INFO[0000] socket: unix:///Users/rafal.zarajczyk/.colima/default/docker.sock
 $ docker run ubuntu:latest uname -a
 Linux 6d3b17834140 5.15.82-0-virt #1-Alpine SMP Mon, 12 Dec 2022 09:15:17 +0000 aarch64 aarch64 aarch64 GNU/Linux
-
 $ colima delete
+
+# Starting x84_64 emulation using macOS Virtualization.Framework
 $ colima start --vm-type vz --arch x86_64
 $ colima status
 INFO[0000] colima is running using macOS Virtualization.Framework
@@ -43,7 +45,24 @@ INFO[0000] mountType: virtiofs
 INFO[0000] socket: unix:///Users/rafal.zarajczyk/.colima/default/docker.sock
 $ docker run ubuntu:latest uname -a
 Linux 52575d133979 5.15.82-0-virt #1-Alpine SMP Mon, 12 Dec 2022 09:15:17 +0000 x86_64 x86_64 x86_64 GNU/Linux
+$ colima delete
+
+# Starting x84_64 emulation using QEMU
+$ colima start --vm-type qemu --arch x86_64
+$ colima status
+INFO[0000] colima is running using QEMU
+INFO[0000] arch: x86_64
+INFO[0000] runtime: docker
+INFO[0000] mountType: 9p
+INFO[0000] socket: unix:///Users/rafal.zarajczyk/.colima/default/docker.sock
+$ docker run ubuntu:latest uname -a
+Linux da2ec14060a9 5.15.82-0-virt #1-Alpine SMP Mon, 12 Dec 2022 09:15:17 +0000 x86_64 x86_64 x86_64 GNU/Linux
 ```
+To be honest I don't know the pros and cons of those two emulation ways. But this is definetelly something worth trying
+if you have to run `amd64` images.
+
+**Note:** colima allows also to specify other parameters - like the number of CPUs and available memory - so 
+you should be able to come up with the setup that fits your needs in the best way.
 
 ## (Not an) Option 3: wait till Rosetta support is there in Docker Desktop
 

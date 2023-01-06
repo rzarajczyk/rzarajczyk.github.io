@@ -10,7 +10,7 @@ However, there are free of charge alternatives:
  - [podman](https://podman.io/) - Apache License 2.0
  - [colima](https://github.com/abiosoft/colima) - MIT License
 
-## Podman in brief
+## Podman
 Podman in brief:
 ```shell
 ## Installation, see https://podman.io/getting-started/installation for details
@@ -38,7 +38,7 @@ What's noteworthy:
  * :x: in some cases Podman use "aliases" for images. F.ex. `hello-world` is a different image than used by Docker. In my personal opinion,
   this brings some uncertainty about which image I'm trying to run.
  
-## Colima in brief
+## Colima
 ```shell
 ## Installation - see https://pet2cattle.com/2022/09/minikube-colima-macos-m1 and https://github.com/abiosoft/colima
 brew install docker docker-compose # Note: this does not install the Docker Engine, just Docker CLI
@@ -69,7 +69,7 @@ Moreover, colima has some other cool features, including:
 * :white_check_mark: multi-architecture support (by CPU emulation) - see [this link](macos-running-amd64-images-on-apple-m1.md)
 
 It's also worth mentioning, that there are [existing online reports](https://kumojin.com/en/colima-alternative-docker-desktop/) stating
-that colima runs faster then the original Docker Desktop.
+that colima performs better than the original Docker Desktop.
 
 ## Verdict: Colima is better
 While both Podman and Colima works fine, **for me Colima is much better tool** due to better compatibility with other software.

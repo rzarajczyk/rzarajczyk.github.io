@@ -37,7 +37,7 @@ What's noteworthy:
   to have it working, but requires some more additional steps (ssh'ing into Podman VM and socket tunneling)
  * :x: in some cases Podman use "aliases" for images. F.ex. `hello-world` is a different image than used by Docker. In my personal opinion,
   this brings some uncertainty about which image I'm trying to run.
-  
+ 
 ## Colima in brief
 ```shell
 ## Installation - see https://pet2cattle.com/2022/09/minikube-colima-macos-m1 and https://github.com/abiosoft/colima
@@ -62,6 +62,14 @@ What's noteworthy:
  * :white_check_mark: there's no separate Colima driver for Minikube, but the Docker driver works just fine.
  * :white_check_mark: Colima is also not detected as a runtime environment for testcontainers, but there's an [official support](https://www.testcontainers.org/supported_docker_environment/#using-colima) for it and it only requires two env variables to be set
  * :white_check_mark: image registry is the same as in Docker
+
+Moreover, colima has some other cool features, including:
+
+* :white_check_mark: build-in kubernetes
+* :white_check_mark: multi-architecture support (by CPU emulation) - see [this link](macos-running-amd64-images-on-apple-m1.md)
+
+It's also worth mentioning, that there are [existing online reports](https://kumojin.com/en/colima-alternative-docker-desktop/) stating
+that colima runs faster then the original Docker Desktop.
 
 ## Verdict: Colima is better
 While both Podman and Colima works fine, **for me Colima is much better tool** due to better compatibility with other software.

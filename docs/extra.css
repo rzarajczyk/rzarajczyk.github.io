@@ -3,3 +3,19 @@
     height: 2em;
     float: left;
 }
+
+.multiplication-table-header {
+    min-width: 0 !important;
+    font-weight: bold !important;
+    background-color: #eeeeee !important;
+}
+
+.q-very-simple {
+    background-color: #81c784;
+}
+.q-simple {
+    background-color: #dce775;
+}
+.q-difficult {
+    background-color: #ffcdd2;
+}

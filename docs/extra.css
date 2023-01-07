@@ -10,6 +10,28 @@
     background-color: #eeeeee !important;
 }
 
+#multiplication-table td, #multiplication-table th {
+    text-align: center;
+}
+
+@media only screen and (max-width: 620px) {
+    #multiplication-table td, #multiplication-table th  {
+        padding: 0.5em 0.75em;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    #multiplication-table td, #multiplication-table th  {
+        padding: 0.1em 0.25em;
+        font-size: 0.5rem;
+    }
+}
+
+.q-legend {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 .q-very-simple {
     background-color: #81c784;
 }

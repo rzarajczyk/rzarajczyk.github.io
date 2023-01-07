@@ -3,17 +3,17 @@ addEventListener('DOMContentLoaded', () => {
     if (table) {
         let html = ''
 
-        html += '<th class="multiplication-table-header"></th>'
-        for (let x=0; x<=9; x++) {
+        html += '<th class="multiplication-table-header">x</th>'
+        for (let x=0; x<=10; x++) {
             html += `<th class="multiplication-table-header">${x}</th>`
         }
 
-        for (let x=0; x<=9; x++) {
+        for (let x=0; x<=10; x++) {
             html += '<tr>'
             html += `<td class="multiplication-table-header">${x}</td>`
-            for (let y=0; y<=9; y++) {
+            for (let y=0; y<=10; y++) {
                 let type = ''
-                if ([0, 1].includes(x) || [0, 1].includes(y)) {
+                if ([0, 1, 10].includes(x) || [0, 1, 10].includes(y)) {
                     type = 'q-very-simple'
                 } else if ([2, 5].includes(x) || [2, 5].includes(y)) {
                     type = 'q-simple'

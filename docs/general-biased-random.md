@@ -58,17 +58,17 @@ table quiz app for primary school kids:
 > ![memo.png](resources%2Fmemo.png)
 >
 > The problem is that the multiplication table contains some very simple operations
-> (like multiplying by `0`, `1` or `2`), but also some more difficult to remember (`7 * 8`)
+> (like multiplying by `0`, `1` or `10`), but also some more difficult to remember (`7 * 8`)
 > 
 > Let's take a look:
 >
 > <table id="multiplication-table"></table>
-> <span class="q-very-simple">very simple</span> - <span class="q-simple">simple</span> - <span class="q-difficult">difficult</span> 
+> <span class="q-legend q-very-simple">very simple</span> - <span class="q-legend q-simple">simple</span> - <span class="q-legend q-difficult">difficult</span> 
 >
 > Of course, we can argue whether some operation is "simple", "very simple", "normal" or "difficult",
 > but let's stick to the above definition for a while. In this case we can see, that there's
-> more green than red in the table - **"simple" and "very simple" questions are majority (64 cases),
-> "difficult" - are minority (27 cases)**.
+> more green than red in the table - **"simple" and "very simple" questions are majority,
+> "difficult" - are minority**.
 > 
 > But **there's no point in asking lots of simple questions**. If we want kids to learn,
 > the app should ask focus difficult operations, and only sometimes ask about the simple ones.

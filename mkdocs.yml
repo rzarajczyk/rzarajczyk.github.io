@@ -29,6 +29,7 @@ nav:
     - 'ubuntu-setup.md'
     - 'ubuntu-logitech-mx-keys.md'
     - 'ubuntu-logitech-mx-vertical.md'
+  - about.md
 extra:
   analytics:
     provider: google

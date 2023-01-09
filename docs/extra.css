@@ -41,3 +41,15 @@
 .q-difficult {
     background-color: #ffcdd2;
 }
+
+#my-photo img {
+    max-width: 30%;
+    border-radius: 50%;
+}
+
+@media only screen and (max-width: 450px) {
+    #my-photo img {
+        max-width: 100%;
+        width: 100%;
+    }
+}

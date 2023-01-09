@@ -1,6 +1,3 @@
----
-comments: true
----
 # Biased random algorithm
 
 Choosing random elements from an array without repetitions is generally a typical programming task.

@@ -4,16 +4,35 @@
     
     This lists is far from being complete!
 
+    Price list legend:
+
+        * 🆓 - free entrance possible
+        * 💸 < 500 PLN
+        * 💸💸 500 - 1500 PLN
+        * 💸💸💸 > 1500 PLN
+
 
 ## 2023
 
-[Warszawskie Dni Informatyki](https://warszawskiedniinformatyki.pl/) - Apr 1-2, online + Warsaw, paid (?)
+[Warszawskie Dni Informatyki](https://warszawskiedniinformatyki.pl/) - Apr 1-2, online + Warsaw &nbsp;&nbsp;&nbsp; paid (?)
 
-[KotlinConf](https://kotlinconf.com/) - Apr 13-14, Amsterdam, paid
+[KotlinConf](https://kotlinconf.com/) - Apr 13-14, Amsterdam &nbsp;&nbsp;&nbsp; paid, sold out
 
-[4developers](https://4developers.org.pl) - Apr 18, Warsaw, paid
+[4developers](https://4developers.org.pl) - Apr 18, Warsaw &nbsp;&nbsp;&nbsp; 💸💸
 
-[Devoxx UK](https://www.devoxx.co.uk/) - May 10-12, London, paid
+[GeeCON](https://2023.geecon.org/) - Apr 19-21, Kraków &nbsp;&nbsp;&nbsp; 💸💸
+
+[Devoxx UK](https://www.devoxx.co.uk/) - May 10-12, London &nbsp;&nbsp;&nbsp; 💸💸💸
+
+[Code Europe Kraków](https://www.codeeurope.pl/) - May 22-23, Kraków, paid (?)
+
+[Code Europe Warszawa](https://www.codeeurope.pl/) - May 25-26, Warsaw, paid (?)
+
+[Devoxx Poland](https://devoxx.pl/) - MAy 31-Jun 2, Kraków &nbsp;&nbsp;&nbsp; 💸💸
+
+[JavaZone](https://javazone.no/) - Sep 6-7, Oslo, paid &nbsp;&nbsp;&nbsp; 💸💸💸
+
+
 
 ## 2022
 

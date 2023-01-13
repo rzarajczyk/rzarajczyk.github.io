@@ -50,6 +50,7 @@ plugins:
 markdown_extensions:
   - admonition
   - tables
+  - footnotes
   - attr_list
   - pymdownx.details
   - pymdownx.snippets

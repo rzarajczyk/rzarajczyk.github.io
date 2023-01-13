@@ -20,6 +20,8 @@ nav:
     - 'general-github.md'
     - 'general-interesting-online-tools.md'
     - 'general-biased-random.md'
+  - 'Apache Solr':
+    - 'solr-introduction.md'
   - 'MacOS':
     - 'macos-setup.md'
     - 'macos-memory-statistics.md'

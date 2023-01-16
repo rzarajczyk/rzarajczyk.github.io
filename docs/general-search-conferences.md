@@ -18,7 +18,7 @@
 
 [ACM CHIIR 2023](https://sigir.org/chiir2023/) - Mar 19-23'2023, Austin (Texas, USA) &nbsp;&nbsp;&nbsp; 💸💸💸
 
-[Berlin Buzzwords](https://2023.berlinbuzzwords.de/) - Jun 18-20, Berlin (Germany) + online &nbsp;&nbsp;&nbsp; 🆓/💸 online [^1], 💸/💸💸 - offline
+[Berlin Buzzwords](https://2023.berlinbuzzwords.de/) - Jun 18-20, Berlin (Germany) + online &nbsp;&nbsp;&nbsp; 🆓/💸 online [^1], 💸💸💸 - offline
 
 [^1]:
     Berlin BuzzWords offers free of charge [Diversity Tickets](https://2023.berlinbuzzwords.de/diversity-inclusivity/) for online

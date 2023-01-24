@@ -10,6 +10,7 @@ me to really understand how does it work.
 * [Recording of the voice of Józef Piłsudzki](https://www.youtube.com/watch?v=f9QYAOQg29M) - Voice of
 [Józef Piłsudzki](https://en.wikipedia.org/wiki/J%C3%B3zef_Pi%C5%82sudski), recorded on Sep 5th, **1924** (that's
 almost 100 years ago!)
+* [ASCII Arg Generator](https://patorjk.com/software/taag) - generator of ASCII Art texts
 
 ## Technical
 * [Epoch Converter](https://www.epochconverter.com/) - converting timestmaps from/to human-readable format

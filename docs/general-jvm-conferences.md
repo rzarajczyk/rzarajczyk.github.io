@@ -24,6 +24,8 @@
 
 [Devoxx UK](https://www.devoxx.co.uk/) - May 10-12, London &nbsp;&nbsp;&nbsp; 💸💸💸
 
+[I love dev](https://ilove.dev/konferencja/) - May 19, Warsaw  &nbsp;&nbsp;&nbsp; 💸💸
+
 [Code Europe Kraków](https://www.codeeurope.pl/) - May 22-23, Kraków, paid (?)
 
 [Code Europe Warszawa](https://www.codeeurope.pl/) - May 25-26, Warsaw, paid (?)

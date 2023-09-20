@@ -32,7 +32,11 @@
 
 [Devoxx Poland](https://devoxx.pl/) - May 31-Jun 2, Kraków &nbsp;&nbsp;&nbsp; 💸💸
 
-[JavaZone](https://javazone.no/) - Sep 6-7, Oslo, paid &nbsp;&nbsp;&nbsp; 💸💸💸
+[JavaZone](https://javazone.no/) - Sep 6-7, Oslo, &nbsp;&nbsp;&nbsp; 💸💸💸
+
+[Programistok](https://programistok.org/) - Oct 7, Białystok &nbsp;&nbsp;&nbsp; 💸
+
+[Ya!vaConf](https://yavaconf.com/) - Dec 8-9, Warsaw &nbsp;&nbsp;&nbsp; 💸
 
 
 

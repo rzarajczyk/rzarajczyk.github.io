@@ -24,6 +24,8 @@
 
 [Devoxx UK](https://www.devoxx.co.uk/) - May 10-12, London &nbsp;&nbsp;&nbsp; 💸💸💸
 
+[infoshare](https://infoshare.pl/) - May 24-25, Gdańsk &nbsp;&nbsp;&nbsp; 💸?
+
 [I love dev](https://ilove.dev/konferencja/) - May 19, Warsaw  &nbsp;&nbsp;&nbsp; 💸💸
 
 [Code Europe Kraków](https://www.codeeurope.pl/) - May 22-23, Kraków &nbsp;&nbsp;&nbsp; 💸/💸💸
@@ -35,6 +37,8 @@
 [JavaZone](https://javazone.no/) - Sep 6-7, Oslo, &nbsp;&nbsp;&nbsp; 💸💸💸
 
 [Programistok](https://programistok.org/) - Oct 7, Białystok &nbsp;&nbsp;&nbsp; 💸
+
+[JDD](https://jdd.org.pl/) - Oct 24-25, Kraków &nbsp;&nbsp;&nbsp; 💸💸
 
 [Ya!vaConf](https://yavaconf.com/) - Dec 8-9, Warsaw &nbsp;&nbsp;&nbsp; 💸
 

@@ -20,6 +20,8 @@
 
 [Berlin Buzzwords](https://2023.berlinbuzzwords.de/) - Jun 18-20, Berlin (Germany) + online &nbsp;&nbsp;&nbsp; 🆓/💸 online [^1], 💸💸💸 - offline
 
+[Haystack Berlin](https://haystackconf.com/) - Sep 20-32, Berlin &nbsp;&nbsp;&nbsp; 💸💸 
+
 [^1]:
     Berlin BuzzWords offers free of charge [Diversity Tickets](https://2023.berlinbuzzwords.de/diversity-inclusivity/) for online
     conference for a large group of minorities, f.ex: women, people of colour, LGBTQIA people, disabled people, and people facing economic or social hardships

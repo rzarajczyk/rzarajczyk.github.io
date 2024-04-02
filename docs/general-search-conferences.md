@@ -22,7 +22,7 @@
     Berlin BuzzWords offers free of charge [Diversity Tickets](https://2023.berlinbuzzwords.de/diversity-inclusivity/) for online
     conference for a large group of minorities, f.ex: women, people of colour, LGBTQIA people, disabled people, and people facing economic or social hardships
 
-## 2023 specials
+## 2023
 
 [Haystack On Tour](https://haystackconf.com/) - Feb 23, Kraków &nbsp;&nbsp;&nbsp; 🆓
 

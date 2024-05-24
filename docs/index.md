@@ -12,6 +12,7 @@ comments: false
 * [Using SSH keys in GitHub (single or multiple)](general-github.md)
 * [Interesting and inspiring online resources](general-interesting-online-tools.md)
 * [Biased random algorithm](general-biased-random.md)
+* [Break time!](general-break-time.md)
 
 #### MacOS
 * [My favorite MacOS initial setup](macos-setup.md)

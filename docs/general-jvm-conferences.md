@@ -11,69 +11,58 @@
         * 💸💸 500 - 1500 PLN
         * 💸💸💸 > 1500 PLN
 
+## Recurrent events - spring season
 
-## 2023
+[Warszawskie Dni Informatyki](https://warszawskiedniinformatyki.pl/) - online + Warsaw &nbsp;&nbsp;&nbsp; 🆓
 
-[Warszawskie Dni Informatyki](https://warszawskiedniinformatyki.pl/) - Apr 1-2, online + Warsaw &nbsp;&nbsp;&nbsp; paid (?)
+[KotlinConf](https://kotlinconf.com/) - various cities &nbsp;&nbsp;&nbsp; paid
 
-[KotlinConf](https://kotlinconf.com/) - Apr 13-14, Amsterdam &nbsp;&nbsp;&nbsp; paid, sold out
+[4developers](https://4developers.org.pl) - Warsaw &nbsp;&nbsp;&nbsp; 💸💸
 
-[4developers](https://4developers.org.pl) - Apr 18, Warsaw &nbsp;&nbsp;&nbsp; 💸💸
+[GeeCON](https://geecon.org/) - Kraków &nbsp;&nbsp;&nbsp; 💸💸
 
-[GeeCON](https://2023.geecon.org/) - Apr 19-21, Kraków &nbsp;&nbsp;&nbsp; 💸💸
+[Devoxx UK](https://www.devoxx.co.uk/) - London &nbsp;&nbsp;&nbsp; 💸💸💸
 
-[Devoxx UK](https://www.devoxx.co.uk/) - May 10-12, London &nbsp;&nbsp;&nbsp; 💸💸💸
+[Devoxx Poland](https://devoxx.pl/) - Kraków &nbsp;&nbsp;&nbsp; 💸💸
 
-[I love dev](https://ilove.dev/konferencja/) - May 19, Warsaw  &nbsp;&nbsp;&nbsp; 💸💸
+[infoshare](https://infoshare.pl/) - Gdańsk &nbsp;&nbsp;&nbsp; 💸?
 
-[Code Europe Kraków](https://www.codeeurope.pl/) - May 22-23, Kraków &nbsp;&nbsp;&nbsp; 💸/💸💸
+[Code Europe Kraków](https://www.codeeurope.pl/) - Kraków &nbsp;&nbsp;&nbsp; 💸/💸💸
 
-[Code Europe Warszawa](https://www.codeeurope.pl/) - May 25-26, Warsaw &nbsp;&nbsp;&nbsp; 💸/💸💸
+[Confitura](https://confitura.pl/) -  Warsaw, paid (cheap)
 
-[Devoxx Poland](https://devoxx.pl/) - May 31-Jun 2, Kraków &nbsp;&nbsp;&nbsp; 💸💸
+[Javeloper](https://javeloper.pl/) - online, free
 
-[JavaZone](https://javazone.no/) - Sep 6-7, Oslo, paid &nbsp;&nbsp;&nbsp; 💸💸💸
+[IntelliJ IDEA Conf](https://lp.jetbrains.com/intellij-idea-conf-2024/) - ???
+
+## Recurrent events - autumn season
+
+[JavaZone](https://javazone.no/) - Oslo, &nbsp;&nbsp;&nbsp; 💸💸💸
+
+[Programistok](https://programistok.org/) - Białystok &nbsp;&nbsp;&nbsp; 💸
+
+[JDD](https://jdd.org.pl/) - Kraków &nbsp;&nbsp;&nbsp; 💸💸
+
+[Ya!vaConf](https://yavaconf.com/) - Warsaw &nbsp;&nbsp;&nbsp; 💸
+
+[JAX London](https://jaxlondon.com/) - London/online, paid
+
+[Devoxx Belgium](https://devoxx.be/) - Antwerp, paid
+
+[4developers Katowice](https://4developers.org.pl/) - Katowice
+
+[4developers Poznań](https://4developers.org.pl/) - Poznań, paid
+
+[4developers Wrocław](https://4developers.org.pl/) - Wrocław, paid
+
+[4developers Łódź](https://4developers.org.pl/) - Łódź, paid
+
+[geecon Prague](https://geecon.cz/) - Prague, paid
 
 
 
-## 2022
+## Others
 
-[4developers](https://4developers.org.pl/4developers-2022-online/) - Apr 4-7, online, paid
+[I love dev](https://ilove.dev/konferencja/) - May 19, 2023, Warsaw  &nbsp;&nbsp;&nbsp; 💸💸
 
-[geecon Kraków](https://2022.geecon.org/) - May 11-13, Kraków, paid
-
-[Code Europe 3cITy](https://www.codeeurope.pl/) - May 30th, Gdańsk, paid
-
-[Code Europe Kraków](https://www.codeeurope.pl/) - June 1st, Kraków, paid
-
-[Code Europe Warszawa](https://www.codeeurope.pl/) - June 2nd, Warsaw, paid
-
-[Devoxx Poland](https://devoxx.pl/) - June 22-24, Kraków, paid
-
-[Confitura](https://confitura.pl/) - June 25, Warsaw, paid (cheap)
-
-[JavaZone](https://javazone.no/) - Sep 7-8, Oslo, paid
-
-[Ya!vaConf](https://yavaconf.com/) - Sep 27-28, online + Warsaw, paid
-
-[Javeloper 2022 Autumn Edition](https://javeloper.pl/) - Sep 29, online, free
-
-[IntelliJ IDEA Conf](https://pages.jetbrains.com/intellij-idea-conf-2022/) - Sep 29-30, online, free
-
-[JAX London](https://jaxlondon.com/) - Oct 3-6, London/online, paid
-
-[JDD](https://jdd.org.pl/) - Oct 4-5, Kraków, paid
-
-[infoshare](https://infoshare.pl/conference/speakers/) - Oct 6-7, Gdańsk, paid
-
-[Devoxx Belgium](https://devoxx.be/) - Oct 10-14, Antwerp, paid
-
-[4developers Katowice](https://4developers.org.pl/) - Oct 11, Katowice
-
-[geecon Prague](https://2022.geecon.cz/) - Oct 24-25, Prague, paid
-
-[4developers Poznań](https://4developers.org.pl/) - Oct 27, Poznań, paid
-
-[4developers Wrocław](https://4developers.org.pl/) - Nov 08, Wrocław, paid
-
-[4developers Łódź](https://4developers.org.pl/) - Nov 29, Łódź, paid
+[Code Europe Warszawa](https://www.codeeurope.pl/) - May 25-26, 2023, Warsaw &nbsp;&nbsp;&nbsp; 💸/💸💸

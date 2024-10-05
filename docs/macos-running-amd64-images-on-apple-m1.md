@@ -68,8 +68,8 @@ you should be able to come up with the setup that fits your needs in the best wa
 
 Well this is not a real option, but there's an issue
 [https://github.com/docker/roadmap/issues/384](https://github.com/docker/roadmap/issues/384) to add the Apple's
-[Rosetta 2](https://en.wikipedia.org/wiki/Rosetta_(software)) emulator for Docker Desktop for Mac. But it's just an open
-issue, no commitments have been made.
+[Rosetta 2](https://en.wikipedia.org/wiki/Rosetta_(software)) emulator for Docker Desktop for Mac. But, as of November 2024, it's still an open issues,
+no commitments have been made.
 
 BTW. You have to use the official Docker Desktop
 
@@ -81,4 +81,4 @@ install Ubuntu Server on it and run your image there. This works, but:
 * the performance is poor. Like a really, really poor.
 * your software will run on a virtual machine, so you need to manually take care of port forwarding of all your required ports to your VM
   (not only typical docker port exposing, but also forwarding ports to the VM)
-* sharing a folder with the VM using UTM is requires installing additional tools in the guest system and non-trivial setup
+* sharing a folder with the VM using UTM requires installing additional tools in the guest system and a non-trivial setup

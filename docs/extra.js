@@ -15,7 +15,7 @@ addEventListener('DOMContentLoaded', () => {
                 let type = ''
                 if ([0, 1, 10].includes(x) || [0, 1, 10].includes(y)) {
                     type = 'q-very-simple'
-                } else if ([2, 5].includes(x) || [2, 5].includes(y)) {
+                } else if ([2, 5].includes(x) || [2, 5].includes(y) || (x == 3 && y == 3)) {
                     type = 'q-simple'
                 } else if ([7, 8, 9].includes(x) || [7,8, 9].includes(y)) {
                     type = 'q-difficult'

@@ -3,9 +3,8 @@
 Choosing random elements from an array without repetitions is generally a typical programming task.
 But what if we would like to have randomness, but with some influence on how this randomness works?
 
-This is my solution for **the biased random problem** - choosing random
-array elements, but with the possibility to define some elements of the array
-as more or less likely to be chosen.
+This is my solution for **the biased random problem** - selecting random array elements with the
+ability to adjust the likelihood of each element being chosen.
 
 ## Problem description
 
@@ -23,29 +22,23 @@ function getMultipleBiasedRandomElements(array $array, array $biases, int $count
 
 where:
 
-* `$array` is an array of any elements
-* `$biases` is an array of floats, with the size equal to the size of `$array`. Each element of `$biases` should
-  define the probability of choosing corresponding item from `$array`:
-    * value 1.0 is a "typical" probability
-    * positive values below 1.0 should reduce the probability of choosing the element
-    * 0.0 should mean that the corresponding element in `$array` is impossible to be chosen
+* `$array` is an array of elements of any type. 
+This will be the array from which we will choose the elements
+* `$biases` an array of floats matching `$array`'s size. Each element of `$biases` should
+  define the probability of choosing corresponding item from `$array`, where:
+    * 1.0 is the standard probability, 
+    * values below 1.0 reduce the likelihood, 
+    * 0.0 means the element can’t be chosen, 
+    * values above 1.0 increase the likelihood.
     * negative values are not allowed
-    * values above 1.0 should increase the probability of choosing the corresponding element
-* `$count` - is the number of elements to be chosen
-
-Of course, **we can use a built-in functions** for randomness
+* `$count` is the number of elements to select.
 
 ### Example
 
-* let `$array` be `['a', 'b', 'c', 'd']`
-* let `$biases` be `[1.0, 0.5, 1.0, 3.0]`
-* let `$count` be 2
+Given `$array = ['a', 'b', 'c', 'd']`, `$biases = [1.0, 0.5, 1.0, 3.0]`, and `$count = 2`:
 
-In this case the function should choose `2` random elements from `['a', 'b', 'c', 'd']`,
-but taking into account that:
-
-* probability of choosing `b` is two times lower (factor 0.5) than `a` or `c`
-* probability of choosing `d` if three times higher (factor 3.0) than `a` or `c`
+* The probability of selecting `'b'` is halved compared to `'a'` or `'c'` (factor 0.5).
+* The probability of selecting `'d'` is three times higher than `'a'` or `'c'` (factor 3.0).
 
 ### Real-life example
 
@@ -58,20 +51,20 @@ table quiz app for primary school kids:
 > ![memo.png](resources%2Fmemo.png)
 >
 > The problem is that the multiplication table contains some very simple operations
-> (like multiplying by `0`, `1` or `10`), but also some more difficult to remember (`7 * 8`)
+> (like multiplying by `0`, `1` or `10`), but also some more difficult to remember (like `7 * 8`)
 > 
 > Let's take a look:
 >
 > <table id="multiplication-table"></table>
-> <span class="q-legend q-very-simple">very simple</span> - <span class="q-legend q-simple">simple</span> - <span class="q-legend q-difficult">difficult</span> 
+> <span class="q-legend q-very-simple">very simple</span> - <span class="q-legend q-simple">simple</span> - moderate - <span class="q-legend q-difficult">difficult</span> 
 >
 > Of course, we can argue whether some operation is "simple", "very simple", "normal" or "difficult",
-> but let's stick to the above definition for a while. In this case we can see, that there's
+> but let's stick to the definition from the table above. We can see that there's
 > more green than red in the table - **"simple" and "very simple" questions are majority,
 > "difficult" - are minority**.
 > 
-> But **there's no point in asking lots of simple questions**. If we want kids to learn,
-> the app should ask focus difficult operations, and only sometimes ask about the simple ones.
+> But if we want kids to learn,
+> **the app should focus on the difficult operations**, and reduce question about the simple ones.
 >
 > This is where the biased random algorithm might be used. We could assign higher
 > biases to "difficult" questions, making them more likely to be chosen, and 
@@ -81,8 +74,7 @@ table quiz app for primary school kids:
 
 !!! question "Do you have a better idea?"
 
-    This solution works, but maybe you have some better solution? Let me know!
-    You can find contant information at [zarajczyk.pl](https://zarajczyk.pl)
+    This solution works, but maybe you have some better solution? Let me know in the comments!
 
 This is my solution (see comments on the listing):
 
@@ -138,15 +130,14 @@ function getMultipleBiasedRandomElements(array $array, array $biases, int $count
 ?>
 ```
 
-1. PHP doesn't have a straightforward function to generate a random double between 0.0 and 1.0,
-   so I have to define my own based on PHP build-in functions
-2. This function requires more explanation, please take a look at the description below the listing
-3. In this case we should choose the whole array, just randomize it
-4. Unlike other languages - f.ex. Java - PHP passes arrays to functions by value (by copying them). So
-   technically there's no need to additionally protect input arguments by creating an explicit copy.
-   However, for the sake of readability (especially for the readers not familiar with PHP) I decided to put it here.
-5. In a loop choose one random element from the copy of the input array, append it to the `$result` and then
-   **remove** from the input array copy to avoid duplicates.
+1. PHP doesn't have a straightforward function to generate a random floating point number between 0.0 and 1.0,
+   so I defined my own using PHP's built-in functions.
+2. This function requires more explanation; please refer to the description below the listing.
+3. In this case, we should select the entire array and simply randomize it. There's no need to use the biased random algorithm.
+4. We need to make sure we won't change the input array. **This operation in not required in PHP**, because - unlike other
+   languages, like Java - PHP passes arrays by value (copies them). Therefore, the input array is already a copy.
+   However, I included it for clarity, especially for readers unfamiliar with PHP.
+5. In the loop, select a random element from the array copy, append it to `$result`, and **remove** it from the copy to prevent duplicates.
 
 ### How `getBiasedRandomIndex` works?
 

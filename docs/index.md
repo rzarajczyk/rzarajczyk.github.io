@@ -29,4 +29,4 @@ comments: false
 
 Disclaimer: [no warranties given! - license](license.md)
 
-[About this page / author](about.md)
+[About this page, author, license](about.md)

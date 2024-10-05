@@ -1,4 +1,4 @@
-# About this page / author
+# About this page, author,  license
 
 <span id="my-photo">
 ![Rafał Zarajczyk](resources/rafal-zarajczyk.jpg){ align=left }

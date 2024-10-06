@@ -23,6 +23,12 @@ possible to create a client for any device.
   * [Family Rules Sony Bravia client](projects-family-rules-sony-bravia-tv.md) - the client for Sony Bravia TV.
   * [Family Rules Android](projects-family-rules-android.md) - the Android client (not working yet).
 
+## Plans for the future
+
+  * fixing bugs
+  * creating the Android client
+  * integration with Home Assistant
+
 ## Third party alternatives
 
 There are many commercial solutions for managing screen time for children. Taking into account possibilities

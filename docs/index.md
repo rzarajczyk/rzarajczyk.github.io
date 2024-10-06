@@ -13,7 +13,7 @@ comments: false
 * [Interesting and inspiring online resources](general-interesting-online-tools.md)
 * [Biased random algorithm](general-biased-random.md)
 
-#### Fun projects
+#### Side projects
 * [Break time!](projects-break-time)
 * [Family Rules](projects-family-rules)
 * [Hue Setup](projects-hue-setup)

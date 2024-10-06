@@ -23,6 +23,7 @@ nav:
   - 'Fun projects':
     - 'projects-break-time.md'
     - 'projects-family-rules.md'
+    - 'projects-hue-setup.md'
   - 'MacOS':
     - 'macos-setup.md'
     - 'macos-memory-statistics.md'

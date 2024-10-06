@@ -16,6 +16,7 @@ comments: false
 #### Fun projects
 * [Break time!](projects-break-time)
 * [Family Rules](projects-family-rules)
+* [Hue Setup](projects-hue-setup)
 
 #### MacOS
 * [My favorite MacOS initial setup](macos-setup.md)

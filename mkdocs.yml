@@ -22,8 +22,15 @@ nav:
     - 'general-biased-random.md'
   - 'Fun projects':
     - 'projects-break-time.md'
-    - 'projects-family-rules.md'
+    - 'Family Rules':
+        - 'projects-family-rules.md'
+        - 'projects-family-rules-server.md'
+        - 'projects-family-rules-client.md'
+        - 'projects-family-rules-sony-bravia-tv.md'
+        - 'projects-family-rules-android.md'
+        - 'projects-family-rules-api.md'
     - 'projects-hue-setup.md'
+    - 'projects-smart-home.md'
   - 'MacOS':
     - 'macos-setup.md'
     - 'macos-memory-statistics.md'

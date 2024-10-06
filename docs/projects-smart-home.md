@@ -1,0 +1,2 @@
+# Various smart home projects
+

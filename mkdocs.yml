@@ -20,7 +20,9 @@ nav:
     - 'general-github.md'
     - 'general-interesting-online-tools.md'
     - 'general-biased-random.md'
-    - 'general-break-time.md'
+  - 'Fun projects':
+    - 'projects-break-time.md'
+    - 'projects-family-rules.md'
   - 'MacOS':
     - 'macos-setup.md'
     - 'macos-memory-statistics.md'

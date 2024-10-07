@@ -12,6 +12,7 @@ comments: false
 * [Using SSH keys in GitHub (single or multiple)](general-github.md)
 * [Interesting and inspiring online resources](general-interesting-online-tools.md)
 * [Biased random algorithm](general-biased-random.md)
+* [Screenshots with device frames](general-screenshots-with-device-frames.md)
 
 #### Side projects
 * [Break time!](projects-break-time)

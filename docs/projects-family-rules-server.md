@@ -48,6 +48,8 @@ services:
       - PG_DBNAME=<some name>
       - PG_USER=<some user>
       - PG_PASS=<some password>
+      - ADMIN_USER=<some admin user>        # default username
+      - ADMIN_PASS=<some admin password>    # default password
       - SPRING_PROFILES_ACTIVE=prod
 ```
 

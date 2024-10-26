@@ -5,6 +5,7 @@ This introduction is based on the official Solr documentation:
 
 * [Installing Solr](https://solr.apache.org/guide/solr/latest/deployment-guide/installing-solr.html)
 * [Downloads](https://solr.apache.org/downloads.html)
+* [core.properties](https://solr.apache.org/guide/solr/latest/configuration-guide/core-discovery.html#the-core-properties-file)
 
 ## Download and run
 

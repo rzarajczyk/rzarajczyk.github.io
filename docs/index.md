@@ -14,6 +14,10 @@ comments: false
 * [Biased random algorithm](general-biased-random.md)
 * [Screenshots with device frames](general-screenshots-with-device-frames.md)
 
+#### Solr
+* [Solr setup](solr-setup.md)
+* [Solr core configuration](solr-core-configuration.md)
+
 #### Side projects
 * [Break time!](projects-break-time)
 * [Family Rules](projects-family-rules)

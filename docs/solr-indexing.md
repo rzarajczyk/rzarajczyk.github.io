@@ -134,9 +134,9 @@ In order to make the data visible while searching, you have to **commit changes*
 
 ### How to commit data?
 
-1. Manually: The URL parameter `?commit=true` and `?softCommit=true` in update requests.
-2. Manually: command `<commit />` in update XML (hard commit)
-3. Automatically: `<autoCommit />` and `<autoSoftCommit />` in `solrconfig.xml`; you can set `maxDocs`, `maxTime`, `maxSize`
+1. Manually: use the URL parameter `?commit=true` or `?softCommit=true` in update requests.
+2. Manually: use command `<commit />` in update XML (hard commit)
+3. Automatically: define `<autoCommit />` and/or `<autoSoftCommit />` in `solrconfig.xml`; you can set `maxDocs`, `maxTime`, `maxSize`
 
 ### Transaction Log (tlog)
 

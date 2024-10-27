@@ -1,6 +1,6 @@
 # Solr core configuration
 
-## Docs:
+## Docs and sources:
 
 * [solrconfig.xml](https://solr.apache.org/guide/solr/latest/configuration-guide/configuring-solrconfig-xml.html)
 * [managed-schema.xml](https://github.com/apache/solr/blob/main/solr/server/solr/configsets/_default/conf/managed-schema.xml)
@@ -9,6 +9,7 @@
 * [Understanding SOLR Field Properties: Indexed, Stored and docValues](https://medium.com/@komalrajput0801/understanding-solr-field-properties-indexed-stored-and-docvalues-deaf6c09f08f)
 * [DocValues VS Stored Fields: Apache Solr Features and Performance SmackDown](https://sease.io/2020/03/docvalues-vs-stored-fields-apache-solr-features-and-performance-smackdown.html)
 * [Document Analysis](https://solr.apache.org/guide/solr/latest/indexing-guide/document-analysis.html)
+* [External files](https://solr.apache.org/guide/solr/latest/indexing-guide/external-files-processes.html)
 
 ## File structure of a `core/conf` directory
 
@@ -53,12 +54,10 @@ Most important files:
 </schema>
 ```
 
-A pretty good docs is in the comments in the default `managed-schema.xml` file in the Solr
+A good documentation is in the comments in the default `managed-schema.xml` file in the Solr
 distribution: [managed-schema.xml](https://github.com/apache/solr/blob/main/solr/server/solr/configsets/_default/conf/managed-schema.xml)
 
-### Field types
-
-#### Generic definition
+### Noteworthy: field types
 
 ```xml
 
@@ -79,14 +78,15 @@ types: [Field Types Included with Solr](https://solr.apache.org/guide/solr/lates
 
 Some common types:
 
-* `solr.StrField` - text saved "as is", not analyzed nor tokenized
-* `solr.TextField` - text with analyzers and tokenized
+* `solr.StrField` - text saved "as is", not analyzed, not tokenized
+* `solr.TextField` - text after tokenization and analysis
 * `solr.BoolField`
 * `solr.DoublePointField`
 * `solr.IntPointField`
 * `solr.DatePointField`
+* `solr.ExternalFileField` - value of this field os stored in a separate file, mainly for function queries
 
-#### Three important data structures: indexed/stored/docValues
+### Three important data structures: indexed/stored/docValues
 
 Let's say we have the following documents:
 
@@ -108,9 +108,8 @@ Let's say we have the following documents:
 </add>
 ```
 
----
 
-##### Inverted index: `indexed="true"`
+#### Inverted index: `indexed="true"`
 
 Per-field data structure, where keys are **tokens** (words), values are **docIds**
 
@@ -140,17 +139,17 @@ Used for **quick searching for documents with given tokens**
     3. Intersection of those sets: `{Car 2, Car 3} ∩ {Car 1, Car 2} = {Car 2}`
     4. Final result set: `{Car 2}`
 
-**Use cases: ** fields which will be part of full-text search or filtering
+**Use cases: ** full-text search or filtering
 
 ---
 
-##### Column-based token storage: `docValues="true`
+#### Column-based token storage: `docValues="true`
 
-Per-field data structure, where keys are **docIds**, and values are **tokend**. See
+Per-field data structure, where keys are **docIds**, and values are **tokens**. See
 [docValues docs](https://solr.apache.org/guide/solr/latest/indexing-guide/docvalues.html)
 
 ```text
-DocValued for field "name":
+DocValues for field "name":
    Car 1 => "vw", "golf", "hatchback"
    Car 2 => "toyota", "corolla", "hatchback"
    Car 3 => "toyota, "auris", "touring"
@@ -170,13 +169,9 @@ Used for retrieving valued during operations like sorting or faceting
 
 ---
 
-##### Row-based original values storage: `stored="true"`
+#### Row-based original values storage: `stored="true"`
 
-Inverted index and docValues store tokens, already processed by analyzers.
-This means the values might be f.ex. lowercased, in different grammatical form,
-omitted etc.
-
-Stored fields are used to retrieve the original value:
+Stored fields are used to retrieve the original (not analysed) value:
 
 ```text
 Car 1:
@@ -193,14 +188,15 @@ Car 3:
 
 !!! Tip
 
-    The common pracice is NOT using search engine for retrieveng values, due to performance reasons. Usually it's
+    The common practice is NOT using search engine for retrieving values, due to performance reasons. Usually it's
     enough to return only docIds from the search engine, and use some external storage to hydrate the data.
 
 ---
 
-#### TextFields: analyzers and tokenizers
+### TextFields: analyzers and tokenizers
 
-In case of `solr.TextField`, it's possible to define how the field is analyzed (modified) during indexing
+In case of `solr.TextField`, it's possible to define how the field is analyzed (modified) during indexing,
+separately for the querying and indexing
 
 ```xml
 <fieldType name="text_general" class="solr.TextField" positionIncrementGap="100" multiValued="true">

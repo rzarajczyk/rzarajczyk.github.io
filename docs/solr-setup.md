@@ -1,6 +1,6 @@
 # Solr setup
 
-## Sources:
+## Docs and sources:
 This introduction is based on the official Solr documentation:
 
 * [Installing Solr](https://solr.apache.org/guide/solr/latest/deployment-guide/installing-solr.html)

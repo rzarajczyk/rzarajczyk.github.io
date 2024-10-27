@@ -68,7 +68,7 @@ you should be able to come up with the setup that fits your needs in the best wa
 
 Well this is not a real option, but there's an issue
 [https://github.com/docker/roadmap/issues/384](https://github.com/docker/roadmap/issues/384) to add the Apple's
-[Rosetta 2](https://en.wikipedia.org/wiki/Rosetta_(software)) emulator for Docker Desktop for Mac. But, as of November 2024, it's still an open issues,
+[Rosetta 2](https://en.wikipedia.org/wiki/Rosetta_(software)) emulator for Docker Desktop for Mac. But, as of October 2024, it's still an open issues,
 no commitments have been made.
 
 BTW. You have to use the official Docker Desktop

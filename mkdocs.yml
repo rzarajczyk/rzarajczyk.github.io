@@ -7,6 +7,7 @@ theme:
   features:
     - content.code.copy
     - content.code.annotate
+    - content.tabs.link
   custom_dir: overrides
 extra_css:
   - extra.css
@@ -24,6 +25,7 @@ nav:
   - 'Solr':
     - 'solr-setup.md'
     - 'solr-core-configuration.md'
+    - 'solr-indexing.md'
   - 'Side projects':
     - 'projects-break-time.md'
     - 'Family Rules':
@@ -82,3 +84,5 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true

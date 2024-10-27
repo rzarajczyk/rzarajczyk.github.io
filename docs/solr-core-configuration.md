@@ -235,3 +235,6 @@ separately for the querying and indexing
   * and much more...
 
 See [Document Analysis](https://solr.apache.org/guide/solr/latest/indexing-guide/document-analysis.html)
+
+## Support in the SolrUI
+![solr-4.png](resources/solr-4.png)

@@ -17,6 +17,7 @@ comments: false
 #### Solr
 * [Solr setup](solr-setup.md)
 * [Solr core configuration](solr-core-configuration.md)
+* [Solr indexing](solr-indexing.md)
 
 #### Side projects
 * [Break time!](projects-break-time)

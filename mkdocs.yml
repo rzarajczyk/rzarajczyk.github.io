@@ -26,7 +26,7 @@ nav:
     - 'solr-setup.md'
     - 'solr-core-configuration.md'
     - 'solr-indexing.md'
-    - 'solr-keyword-matching.md'
+    - 'solr-token-matching.md'
   - 'Side projects':
     - 'projects-break-time.md'
     - 'Family Rules':

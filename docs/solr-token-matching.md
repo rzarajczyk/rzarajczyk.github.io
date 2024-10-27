@@ -1,4 +1,4 @@
-# Solr keyword matching
+# Solr token matching
 
 ## Docs and sources:
 
@@ -6,7 +6,7 @@
 * [Language Analysis](https://solr.apache.org/guide/solr/latest/indexing-guide/language-analysis.html)
 
 
-## How do Solr performs keyword matching?
+## How do Solr performs token matching?
 
 Let's assume we have defined the field `name` as type `text_en` from the default `managed-schema.xml` file in the Solr
 distribution: [managed-schema.xml](https://github.com/apache/solr/blob/main/solr/server/solr/configsets/_default/conf/managed-schema.xml)
@@ -100,8 +100,18 @@ Every search query is split into tokens by query-time analyzers. So let's check 
 5. Keyword Marker does nothing in this case
 6. Stemmer changes words to its stems, here `tvs` into `tv`, `television` into `televis`
 
-#### We have a match
+#### We have matching tokens here
 The UI shows also that tokens `mark` and `tv` are a match between query token and indexed token - matching tokens are highlighted.
+
+#### But watch out!
+On the token level, the match must be exact - `car` would not match `cars`. You need to define the appropriate
+analyzers to make sure that different grammatical forms will be handled correctly.
+
+#### Notworthy: stems might not be existing words
+
+In this example the stem from `television` is `televis`.
+This is fine, stems are the most basic form which is shared between all grammatical variants of the word,
+but stem itself does not need to form a valid word by its own.
 
 #### Why do we have synonyms multiplied?
 On a **non-verbose output** we can be surprised that we have four

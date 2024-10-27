@@ -18,7 +18,7 @@ comments: false
 * [Solr setup](solr-setup.md)
 * [Solr core configuration](solr-core-configuration.md)
 * [Solr indexing](solr-indexing.md)
-* [Solr keyword matching](solr-keyword-matching.md)
+* [Solr keyword matching](solr-token-matching)
 
 #### Side projects
 * [Break time!](projects-break-time)

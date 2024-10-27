@@ -96,14 +96,17 @@ Let's say we have the following documents:
     <doc>
         <field name="id">Car 1</field>
         <field name="name">VW Golf hatchback</field>
+        <field name="price">200</field>
     </doc>
     <doc>
         <field name="id">Car 2</field>
         <field name="name">Toyota Corolla hatchback</field>
+        <field name="price">100</field>
     </doc>
     <doc>
         <field name="id">Car 3</field>
         <field name="name">Toyota Auris Touring</field>
+      <field name="price">50</field>
     </doc>
 </add>
 ```
@@ -111,7 +114,7 @@ Let's say we have the following documents:
 
 #### Inverted index: `indexed="true"`
 
-Per-field data structure, where keys are **tokens** (words), values are **docIds**
+Per-field data structure, pointing from **tokens** (words) to **docIds**
 
 ```text
 Index for field "name":
@@ -122,6 +125,11 @@ Index for field "name":
     "corolla"   => Car 2
     "auris"     => Car 3
     "touring"   => Car 3
+    
+Index for field "price":
+    50          => Car 3
+    100         => Car 2
+    200         => Car 1 
 ```
 
 Used for **quick searching for documents with given tokens**
@@ -143,16 +151,21 @@ Used for **quick searching for documents with given tokens**
 
 ---
 
-#### Column-based token storage: `docValues="true`
+#### Column-based token storage: `docValues="true"`
 
-Per-field data structure, where keys are **docIds**, and values are **tokens**. See
+Per-field data structure, pointing from **docIds** to field **values**. See
 [docValues docs](https://solr.apache.org/guide/solr/latest/indexing-guide/docvalues.html)
+
+**Note:** docValues can be enabled only for some field typed. `TextField` is **not** among them.
 
 ```text
 DocValues for field "name":
-   Car 1 => "vw", "golf", "hatchback"
-   Car 2 => "toyota", "corolla", "hatchback"
-   Car 3 => "toyota, "auris", "touring"
+    <can't be created>
+    
+DocValues for field "price":
+   Car 1 => 200
+   Car 2 => 100
+   Car 3 => 50
 ```
 
 Used for retrieving valued during operations like sorting or faceting
@@ -162,7 +175,6 @@ Used for retrieving valued during operations like sorting or faceting
 - sorting
 - faceting
 - grouping
-- highlighting / snippeting
 - function queries
 - sometimes retrieving the values, but it's limited -
   see [docs](https://solr.apache.org/guide/solr/latest/indexing-guide/docvalues.html#retrieving-docvalues-during-search)
@@ -171,17 +183,20 @@ Used for retrieving valued during operations like sorting or faceting
 
 #### Row-based original values storage: `stored="true"`
 
-Stored fields are used to retrieve the original (not analysed) value:
+Stored fields are used to store the original (not analysed) value per document:
 
 ```text
-Car 1:
+Stored values for Car 1:
     name: "VW Golf hatchback"
+    price: 200
     
-Car 2:
+Stored values for Car 2:
     name: "Toyota Corolla hatchback"
+    price: 100
     
-Car 3:
+Stored values for Car 3:
     name: "Toyota Auris Touring"
+    price: 50
 ```
 
 **Use cases**: when we want to get the values from the index

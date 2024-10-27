@@ -5,6 +5,8 @@
 * [Query Syntax and Parsers](https://solr.apache.org/guide/solr/latest/query-guide/query-syntax-and-parsers.html)
 * [Common Query Parameters](https://solr.apache.org/guide/solr/latest/query-guide/common-query-parameters.html)
 * [Standard Query Parser](https://solr.apache.org/guide/solr/latest/query-guide/standard-query-parser.html)
+* [DixMax Query Parser](https://solr.apache.org/guide/solr/latest/query-guide/dismax-query-parser.html)
+* [Extended DisMax (eDisMax) Query Parser](https://solr.apache.org/guide/solr/latest/query-guide/edismax-query-parser.html)
 
 ## How do send queries to Solr?`
 
@@ -54,31 +56,71 @@ These parameters can be also set in the SolrUI
 
 Docs: [Standard Query Parser](https://solr.apache.org/guide/solr/latest/query-guide/standard-query-parser.html)
 
-| param  | description                            | defaultValue |
-|--------|----------------------------------------|--------------|
-| `q`    | main query (mandatory)                 | _none_       | 
-| `q.op` | `AND` or `OR`, relation between tokens | `OR`         | 
-| `df`   | which fields should be searched        | _none_       |
-
+| param  | description                                         | defaultValue |
+|--------|-----------------------------------------------------|--------------|
+| `q`    | main query (mandatory)                              | _none_       | 
+| `q.op` | `AND` or `OR`, relation between tokens              | `OR`         | 
+| `df`   | which (single) field should be searched, eg. `name` | _none_       |
 
 The main query syntax by example:
 
- * `vw golf` - searches for these words in fields defined in `df`, and joins them using `q.op`
- * `"vw golf"` - searches for phrase in fields defined in `df`. Tokens must be next to each other.
- * `gol?`, `gol*` - wildcards are supported
- * `golf~2` - fuzzy searching, finds similar words
- * `"vw golf"~3` - proximity search, tokens `vw` and `golf` must be within 3 words of each other
- * `name:vw` - searches for `vw` in field `name` 
- * `name:"vw golf"` - searches for phrase `"vw golf"` in field `name` 
- * `name:gol?`, `name:gol*`, `name:golf~2` - it's all supported
- * `name:*` - finds documents, which have some value in field `name` set
- * `price:[52 TO 1000]` - ranges for numeric fields (including those borders)
- * `price:{52 TO 1000}` - ranges for numeric fields (EXCLUDING those borders)
- * `price:{52 TO 1000]` - also possible
- * `price:[* TO 1000]` - also possible
- * `vw^4 golf` - token `vw` if boosted (more important) four times
- * `vw OR golf`, `vw AND golf`, `vw || golf`, `vw && golf` - explicitly specify operator between tokens
- * `"vw golf" OR toyota` - also possible
- * `(vw AND golf) OR toyota` - also possible
- * `vw NOT golf`, `vw ! golf` - also possible
- * `+vw -golf` - must include `vw`, cannot include `golf`
+* `vw golf` - searches for these words in fields defined in `df`, and joins them using `q.op`
+* `"vw golf"` - searches for phrase in fields defined in `df`. Tokens must be next to each other.
+* `gol?`, `gol*` - wildcards are supported
+* `golf~2` - fuzzy searching, finds similar words
+* `"vw golf"~3` - proximity search, tokens `vw` and `golf` must be within 3 words of each other
+* `name:vw` - searches for `vw` in field `name`
+* `name:"vw golf"` - searches for phrase `"vw golf"` in field `name`
+* `name:gol?`, `name:gol*`, `name:golf~2` - it's all supported
+* `name:*` - finds documents, which have some value in field `name` set
+* `price:[52 TO 1000]` - ranges for numeric fields (including those borders)
+* `price:{52 TO 1000}` - ranges for numeric fields (EXCLUDING those borders)
+* `price:{52 TO 1000]` - also possible
+* `price:[* TO 1000]` - also possible
+* `vw^4 golf` - token `vw` if boosted (more important) four times
+* `vw OR golf`, `vw AND golf`, `vw || golf`, `vw && golf` - explicitly specify operator between tokens
+* `"vw golf" OR toyota` - also possible
+* `(vw AND golf) OR toyota` - also possible
+* `vw NOT golf`, `vw ! golf` - also possible
+* `+vw -golf` - must include `vw`, cannot include `golf`
+
+### DisMax
+
+Docs: [DixMax Query Parser](https://solr.apache.org/guide/solr/latest/query-guide/dismax-query-parser.html)
+
+The main goal of DisMax was to separate the user's query from how the query should be processed.
+
+**Note:** DisMax doesn't support Lucene Query Parser's syntax!
+
+| param | description                                                                                                  | defaultValue |
+|-------|--------------------------------------------------------------------------------------------------------------|--------------|
+| `q`   | main query (mandatory)                                                                                       | _none_       | 
+| `qf`  | which fields should be searched + their weights, eg. `brand^4.5 model`                                       | _none_       |
+| `mm`  | minimum should match; number of "should" words that must match the document; might be absolute or percentage | _none_       |
+| `pf`  | phrase fields; if the tokens appear in close proximity in this field, the document is boosted                | _none_       |
+| `ps`  | phrase slop; the maximum distance between tokens to form a phrase                                            | _none_       |
+
+The main query syntax by example:
+
+* `q=vw golf&qf=brand^2 model` - search for tokens `vw` (optional) and `golf` (optional) in fields `brand` (higher
+  priority) and `name` (lower priority)
+* `q=+vw golf&qf=brand^2 model` - search for tokens `vw` (mandatory) and `golf` (optional) in fields `brand` (higher
+  priority) and `name` (lower priority)
+* `q=+vw +golf&qf=brand^2 model` - search for tokens `vw` (mandatory) and `golf` (mandatory) in fields `brand` (higher
+  priority) and `name` (lower priority)
+* `q=+vw +golf -toyota&qf=brand^2 model` - search for tokens `vw` (mandatory) and `golf` (mandatory) in fields `brand` (
+  higher priority) and `name` (lower priority); documents cannot contain `toyota`
+* `q=vw golf hatchback&qf=brand^2 model&mm=2` - search for tokens `vw` (optional) and `golf` (optional) and
+  `hatchback` (optional) in fields `brand` (higher priority) and `name` (lower
+  priority); the document is returned if at least two of these optional words have been found
+* `q=vw golf&qf=brand^2 model&pf=name` - search for tokens `vw` (optional) and `golf` (optional) in fields `brand` (
+  higher
+  priority) and `name` (lower priority); if the phrase "vw golf" if found in field `name`, boost the document
+* `q=vw golf&qf=brand^2 model&pf=name&ps=4` - search for tokens `vw` (optional) and `golf` (optional) in fields
+  `brand` (higher
+  priority) and `name` (lower priority); if the phrase "vw golf" if found in field `name`, boost the document; maximum
+  allowed distance between these words is 4
+
+### eDisMax
+
+Combination of Lucene and DisMax. See the docs: [Extended DisMax (eDisMax) Query Parser](https://solr.apache.org/guide/solr/latest/query-guide/edismax-query-parser.html)

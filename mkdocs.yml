@@ -39,6 +39,7 @@ nav:
         - 'projects-family-rules-api.md'
     - 'projects-hue-setup.md'
     - 'projects-smart-home.md'
+    - 'projects-solr-ids-export-plugin.md'
   - 'MacOS':
     - 'macos-setup.md'
     - 'macos-memory-statistics.md'

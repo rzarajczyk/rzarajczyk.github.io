@@ -22,10 +22,11 @@ comments: false
 * [Solr querying](solr-querying.md)
 
 #### Side projects
-* [Break time!](projects-break-time)
-* [Family Rules](projects-family-rules)
-* [Hue Setup](projects-hue-setup)
-* [Various SmartHome projects](projects-smart-home)
+* [Break time!](projects-break-time.md)
+* [Family Rules](projects-family-rules.md)
+* [Hue Setup](projects-hue-setup.md)
+* [Various SmartHome projects](projects-smart-home.md)
+* [Solr IdsExportPlugins](projects-solr-ids-export-plugin.md)
 
 #### MacOS
 * [My favorite MacOS initial setup](macos-setup.md)

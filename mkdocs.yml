@@ -61,7 +61,7 @@ extra:
       <p>We're not using any other cookies.</p>
       <p>You can turn off Google Analytics cookie by disabling cookies in your browser:
       <a href="https://support.google.com/accounts/answer/61416?hl=en&co=GENIE.Platform%3DDesktop" target="_blank">How to disable cookies</a></p>
-copyright: Copyright &copy; 2020 - 2023 Rafał Zarajczyk - <a href="/no-warranties">no warranties given! - license</a>
+copyright: Copyright &copy; 2020 - 2024 Rafał Zarajczyk - <a href="/no-warranties">no warranties given! - license</a>
 plugins:
   - search
   - glightbox:

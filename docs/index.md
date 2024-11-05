@@ -23,6 +23,7 @@ comments: false
 
 #### Side projects
 * [Break time!](projects-break-time.md)
+* [memo.education](projects-memo-education.md)
 * [Family Rules](projects-family-rules.md)
 * [Hue Setup](projects-hue-setup.md)
 * [Various SmartHome projects](projects-smart-home.md)

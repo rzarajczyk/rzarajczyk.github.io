@@ -147,7 +147,7 @@ Used for **quick searching for documents with given tokens**
     3. Intersection of those sets: `{Car 2, Car 3} ∩ {Car 1, Car 2} = {Car 2}`
     4. Final result set: `{Car 2}`
 
-**Use cases: ** full-text search or filtering
+**Use cases:** full-text search or filtering
 
 ---
 

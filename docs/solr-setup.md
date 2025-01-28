@@ -30,7 +30,7 @@ Open in the browser: [http://localhost:8983/](http://localhost:8983/)
 
 !!! info "What is a core?"
 
-    **Core** in Solr is equivalent of a **database** in PostgreSQL or MySQL or **index**
+    **Core** in Solr is equivalent of a **table** in PostgreSQL or MySQL or **index**
     in Elasticsearch. It is a logical collection of documents.
 
 ```shell

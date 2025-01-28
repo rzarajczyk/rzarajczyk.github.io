@@ -1,0 +1,1765 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="http://rzarajczyk.github.io/solr-querying/">
+      
+      
+        <link rel="prev" href="../solr-token-matching/">
+      
+      
+        <link rel="next" href="../projects-break-time/">
+      
+      
+      <link rel="icon" href="https://zarajczyk.pl/rafal/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
+    
+    
+      
+        <title>Solr querying - Rafał Zarajczyk</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.a40c8224.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-JXJ2E77PMC"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-JXJ2E77PMC",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-JXJ2E77PMC",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>if("undefined"!=typeof __md_analytics){var consent=__md_get("__consent");consent&&consent.analytics&&__md_analytics()}</script>
+  
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#solr-querying" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Rafał Zarajczyk" class="md-header__button md-logo" aria-label="Rafał Zarajczyk" data-md-component="logo">
+      
+  <img src="https://zarajczyk.pl/rafal/favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Rafał Zarajczyk
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Solr querying
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Rafał Zarajczyk" class="md-nav__button md-logo" aria-label="Rafał Zarajczyk" data-md-component="logo">
+      
+  <img src="https://zarajczyk.pl/rafal/favicon.ico" alt="logo">
+
+    </a>
+    Rafał Zarajczyk
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    General
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            General
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general-jvm-conferences/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JVM-related conferences
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general-search-conferences/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Search-related conferences
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general-github/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using SSH keys in GitHub (single or multiple)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general-interesting-online-tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interesting and inspiring online resources
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general-biased-random/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Biased random algorithm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general-screenshots-with-device-frames/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Screenshots with device frames
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Solr
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Solr
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solr-setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Solr setup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solr-core-configuration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Solr core configuration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solr-indexing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Solr indexing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../solr-token-matching/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Solr token matching
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Solr querying
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Solr querying
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docs-and-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docs and sources:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-send-queries-to-solr" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do send queries to Solr?`
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How do send queries to Solr?`">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#about-queryparsers" class="md-nav__link">
+    <span class="md-ellipsis">
+      About QueryParsers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-query-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common query parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lucene-query-parser-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lucene Query Parser (default)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dismax" class="md-nav__link">
+    <span class="md-ellipsis">
+      DisMax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edismax" class="md-nav__link">
+    <span class="md-ellipsis">
+      eDisMax
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Side projects
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Side projects
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects-break-time/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Break time!
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects-memo-education/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    memo.education
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Family Rules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Family Rules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects-family-rules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Family Rules
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects-family-rules-server/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Family Rules Server
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects-family-rules-client/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Family Rules Client
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects-family-rules-sony-bravia-tv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Family Rules Sony Bravia client
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects-family-rules-android/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Family Rules Android
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects-family-rules-api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Family Rules Server - Client API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects-hue-setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hue Setup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects-smart-home/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Various smart home projects
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects-solr-ids-export-plugin/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Solr IdsExportPlugin
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MacOS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            MacOS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../macos-setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    My favorite MacOS initial setup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../macos-memory-statistics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting memory statistics from command line in MacOS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../macos-docker-without-docker-desktop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker without Docker Desktop on MacOS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../macos-running-amd64-images-on-apple-m1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Running docker amd64 images on Apple Silicon M1/M2 chip
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ubuntu
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Ubuntu
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ubuntu-setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    My favorite Ubuntu 22.04 initial setup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ubuntu-logitech-mx-keys/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ubuntu 22.04 and Logitech MX Keys for Mac
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ubuntu-logitech-mx-vertical/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ubuntu 22.04 and Logitech MX Vertical
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About this page, author, license
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docs-and-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docs and sources:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-do-send-queries-to-solr" class="md-nav__link">
+    <span class="md-ellipsis">
+      How do send queries to Solr?`
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How do send queries to Solr?`">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#about-queryparsers" class="md-nav__link">
+    <span class="md-ellipsis">
+      About QueryParsers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#common-query-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common query parameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lucene-query-parser-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lucene Query Parser (default)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dismax" class="md-nav__link">
+    <span class="md-ellipsis">
+      DisMax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#edismax" class="md-nav__link">
+    <span class="md-ellipsis">
+      eDisMax
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="solr-querying">Solr querying</h1>
+<h2 id="docs-and-sources">Docs and sources:</h2>
+<ul>
+<li><a href="https://solr.apache.org/guide/solr/latest/query-guide/query-syntax-and-parsers.html">Query Syntax and Parsers</a></li>
+<li><a href="https://solr.apache.org/guide/solr/latest/query-guide/common-query-parameters.html">Common Query Parameters</a></li>
+<li><a href="https://solr.apache.org/guide/solr/latest/query-guide/standard-query-parser.html">Standard Query Parser</a></li>
+<li><a href="https://solr.apache.org/guide/solr/latest/query-guide/dismax-query-parser.html">DixMax Query Parser</a></li>
+<li><a href="https://solr.apache.org/guide/solr/latest/query-guide/edismax-query-parser.html">Extended DisMax (eDisMax) Query Parser</a></li>
+</ul>
+<h2 id="how-do-send-queries-to-solr">How do send queries to Solr?`</h2>
+<p>Basic example:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">HTTP API</label><label for="__tabbed_1_2">SolrUI</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>curl<span class="w"> </span><span class="s2">&quot;http://localhost:8983/solr/mycore/select?q=*:*&quot;</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><a class="glightbox" href="../resources/solr-10.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="solr-10.png" src="../resources/solr-10.png" /></a></p>
+</div>
+</div>
+</div>
+<h3 id="about-queryparsers">About QueryParsers</h3>
+<p>The query syntax is strictly dependent on the QueryParser being used. Each parser has different syntax and capabilities.</p>
+<h3 id="common-query-parameters">Common query parameters</h3>
+<p>Full list and
+description: <a href="https://solr.apache.org/guide/solr/latest/query-guide/common-query-parameters.html">Common Query Parameters</a></p>
+<p>Some examples:</p>
+<table>
+<thead>
+<tr>
+<th>param</th>
+<th>description</th>
+<th>examples</th>
+<th>defaultValue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>defType</code></td>
+<td>which QueryParser should be used</td>
+<td><ul><li><code>dismax</code></li><li><code>edismax</code></li><li><code>lucene</code></li></ul></td>
+<td><code>lucene</code></td>
+</tr>
+<tr>
+<td><code>q</code></td>
+<td>main query</td>
+<td><em>depending on QueryParser</em></td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td><code>fq</code></td>
+<td>filter query</td>
+<td><code>fq=popularity:[10 TO *]&amp;fq=section:0</code></td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td>result set sorting order</td>
+<td><ul><li><code>score desc</code></li><li><code>price asc, name desc</code></li><li><code>price asc, div(popularity,price) asc</code></li></ul></td>
+<td><code>score desc</code></td>
+</tr>
+<tr>
+<td><code>start</code></td>
+<td>for pagination: offset of page start</td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>rows</code></td>
+<td>for pagination: number of documents</td>
+<td><code>72</code></td>
+<td><code>10</code></td>
+</tr>
+<tr>
+<td><code>fl</code></td>
+<td>fields to retrieve</td>
+<td><ul><li><code>id,name,price</code></li><li><code>id na* price</code></li><li><code>*</code></li><li><code>div(popularity,price)</code></li></ul></td>
+<td><code>*</code></td>
+</tr>
+<tr>
+<td><code>debug</code></td>
+<td>return debug information</td>
+<td><ul><li><code>query</code></li><li><code>timing</code></li><li><code>results</code></li><li><code>all</code></li></ul></td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td><code>timeAllowed</code></td>
+<td>the amount of time, in milliseconds, allowed for a search to complete</td>
+<td>2000</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td><code>wt</code></td>
+<td>output format</td>
+<td><ul><li><code>json</code></li><li><code>xml</code></li><li><code>csv</code></li></ul></td>
+<td><code>json</code></td>
+</tr>
+<tr>
+<td><code>echoParams</code></td>
+<td>should the query parameters be included in the response</td>
+<td><ul><li><code>all</code></li><li><code>none</code></li><li><code>explicit</code></li></ul></td>
+<td><code>none</code></td>
+</tr>
+</tbody>
+</table>
+<p>Additionally, you can specify:</p>
+<ul>
+<li><a href="https://solr.apache.org/guide/solr/latest/query-guide/faceting.html">Faceting</a></li>
+<li><a href="https://solr.apache.org/guide/solr/latest/query-guide/highlighting.html">Highlighting</a></li>
+</ul>
+<hr />
+<h3 id="lucene-query-parser-default">Lucene Query Parser (default)</h3>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl<span class="w"> </span><span class="s2">&quot;http://localhost:8983/solr/mycore/select?defType=lucene&amp;q=*:*&quot;</span>
+</code></pre></div>
+<p>Docs: <a href="https://solr.apache.org/guide/solr/latest/query-guide/standard-query-parser.html">Standard Query Parser</a></p>
+<table>
+<thead>
+<tr>
+<th>param</th>
+<th>description</th>
+<th>defaultValue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>q</code></td>
+<td>main query (mandatory); see examples below</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td><code>q.op</code></td>
+<td><code>AND</code> or <code>OR</code>, relation between tokens</td>
+<td><code>OR</code></td>
+</tr>
+<tr>
+<td><code>df</code></td>
+<td>which (single) field should be searched, eg. <code>name</code></td>
+<td><em>none</em></td>
+</tr>
+</tbody>
+</table>
+<p>The main query syntax by example:</p>
+<ul>
+<li><code>vw golf</code> - searches for these words in fields defined in <code>df</code>, and joins them using <code>q.op</code></li>
+<li><code>"vw golf"</code> - quotes mark phrases. Tokens must be next to each other.</li>
+<li><code>gol?</code>, <code>gol*</code> - wildcards are supported</li>
+<li><code>golf~2</code> - tilde after word (not phrase) - fuzzy searching, finds similar words</li>
+<li><code>"vw golf"~3</code> - tilde after phrase (not word) - proximity search, tokens <code>vw</code> and <code>golf</code> must be within 3 words of
+  each other</li>
+<li><code>name:vw</code> - possibility to define explicit fields - <code>&lt;field-name&gt;:&lt;query&gt;</code></li>
+<li><code>name:"vw golf"</code>, <code>name:gol?</code>, <code>name:gol*</code>, <code>name:golf~2</code> - it's all supported</li>
+<li><code>name:*</code> - finds documents, which have some value in field <code>name</code> set</li>
+<li><code>price:[52 TO 1000]</code> - ranges for numeric fields (including those borders)</li>
+<li><code>price:{52 TO 1000}</code> - ranges for numeric fields (EXCLUDING those borders)</li>
+<li><code>price:{52 TO 1000]</code>, <code>price:[* TO 1000]</code> - also possible</li>
+<li><code>vw^4 golf</code> - boosting; token <code>vw</code> is boosted (more important) four times</li>
+<li><code>vw OR golf</code>, <code>vw AND golf</code>, <code>vw || golf</code>, <code>vw &amp;&amp; golf</code> - explicitly specify operator between tokens</li>
+<li><code>"vw golf" OR toyota</code> - also possible</li>
+<li><code>(vw AND golf) OR toyota</code> - also possible</li>
+<li><code>vw NOT golf</code>, <code>vw ! golf</code> - excluding tokens</li>
+<li><code>+vw -golf</code> - must include <code>vw</code>, cannot include <code>golf</code></li>
+</ul>
+<h3 id="dismax">DisMax</h3>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl<span class="w"> </span><span class="s2">&quot;http://localhost:8983/solr/mycore/select?defType=dismax&amp;q=vw+golf&amp;qf=brand^2+model&quot;</span>
+</code></pre></div>
+<p>The main goal of DisMax was to separate the user's query from how the query should be processed. DisMax doesn't support
+Lucene Query Parser's syntax!</p>
+<p>Docs: <a href="https://solr.apache.org/guide/solr/latest/query-guide/dismax-query-parser.html">DixMax Query Parser</a></p>
+<table>
+<thead>
+<tr>
+<th>param</th>
+<th>description</th>
+<th>defaultValue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>q</code></td>
+<td>main query (mandatory): only basic syntax is supported: <ul><li>quotes for phrases</li><li>SHOULD MATCH: just <em>word</em> without any modifier (default)</li><li>MUST MATCH: <em>+word</em> (prefix <code>+</code>)</li><li>CAN'T MATCH: <em>-word</em> (prefix <code>-</code>)</li></ul> see examples below</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td><code>q.alt</code></td>
+<td>query which should be used if main query is empty</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td><code>qf</code></td>
+<td>which fields should be searched with their weights, eg. <code>brand^2.5 model^0.5</code></td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td><code>mm</code></td>
+<td>minimum should match; number of SHOULD MATCH words that must match the document; might be absolute or percentage</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td><code>pf</code></td>
+<td>phrase fields; if the tokens appear in close proximity in this field, the document is boosted, eg <code>title^4 description^1</code></td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td><code>ps</code></td>
+<td>phrase slop; the maximum distance between tokens to form a phrase</td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td><code>tie</code></td>
+<td>tie breaker: see <a href="https://solr.apache.org/guide/solr/latest/query-guide/dismax-query-parser.html#the-tie-tie-breaker-parameter">the docs</a></td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td><code>bq</code></td>
+<td>boost query: see <a href="https://solr.apache.org/guide/solr/latest/query-guide/dismax-query-parser.html#bq-boost-query-parameter">the docs</a></td>
+<td><em>none</em></td>
+</tr>
+<tr>
+<td><code>bf</code></td>
+<td>boost function: see <a href="https://solr.apache.org/guide/solr/latest/query-guide/dismax-query-parser.html#bf-boost-functions-parameter">the docs</a></td>
+<td><em>none</em></td>
+</tr>
+</tbody>
+</table>
+<p>The main query syntax by example:</p>
+<ul>
+<li><code>q=vw golf&amp;qf=brand^2 model</code> - search for words <code>vw</code> (optional) and <code>golf</code> (optional) in fields <code>brand</code> (higher
+  priority) and <code>name</code> (lower priority)</li>
+<li><code>q=+vw golf&amp;qf=brand^2 model</code> - search for words <code>vw</code> (mandatory) and <code>golf</code> (optional) in fields <code>brand</code> (higher
+  priority) and <code>name</code> (lower priority)</li>
+<li><code>q=+"vw golf"&amp;qf=brand^2 model</code> - search for phrase <code>"vw golf"</code> (mandatory) in fields <code>brand</code> (higher
+  priority) and <code>name</code> (lower priority)</li>
+<li><code>q=+vw +golf&amp;qf=brand^2 model</code> - search for words <code>vw</code> (mandatory) and <code>golf</code> (mandatory) in fields <code>brand</code> (higher
+  priority) and <code>name</code> (lower priority)</li>
+<li><code>q=+vw +golf -toyota&amp;qf=brand^2 model</code> - search for words <code>vw</code> (mandatory) and <code>golf</code> (mandatory) in fields <code>brand</code> (
+  higher priority) and <code>name</code> (lower priority); documents cannot contain <code>toyota</code></li>
+<li><code>q=vw golf hatchback&amp;qf=brand^2 model&amp;mm=2</code> - search for words <code>vw</code> (optional) and <code>golf</code> (optional) and
+  <code>hatchback</code> (optional) in fields <code>brand</code> (higher priority) and <code>name</code> (lower
+  priority); the document is returned if at least two of these optional words have been found</li>
+<li><code>q=vw golf hatchback&amp;qf=brand^2 model&amp;mm=50%</code> - search for words <code>vw</code> (optional) and <code>golf</code> (optional) and
+  <code>hatchback</code> (optional) in fields <code>brand</code> (higher priority) and <code>name</code> (lower
+  priority); the document is returned if at least half of the optional words have been found </li>
+<li><code>q=vw golf&amp;qf=brand^2 model&amp;pf=name^5</code> - search for words <code>vw</code> (optional) and <code>golf</code> (optional) in fields <code>brand</code> (
+  higher priority) and <code>name</code> (lower priority); if the phrase "vw golf" if found in field <code>name</code>, boost the document</li>
+<li><code>q=vw golf&amp;qf=brand^2 model&amp;pf=name^5&amp;ps=4</code> - search for words <code>vw</code> (optional) and <code>golf</code> (optional) in fields
+  <code>brand</code> (higher priority) and <code>name</code> (lower priority); if the phrase "vw golf" if found in field <code>name</code>, boost the
+  document; maximum allowed distance between these words is 4</li>
+</ul>
+<h3 id="edismax">eDisMax</h3>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>curl<span class="w"> </span><span class="s2">&quot;http://localhost:8983/solr/mycore/select?defType=edismax&amp;q=vw+AND+golf&amp;qf=brand^2+model&quot;</span>
+</code></pre></div>
+<p>Extended DisMax, combination DisMax and Lucene Query Parser with add-ons.</p>
+<p>As a first approximation, you can think of eDixMax as DisMax, where:</p>
+<ul>
+<li>you can use <code>AND</code> and <code>OR</code> inside <code>q</code> parameter</li>
+<li>you can specify a <code>boost</code> function in a better way than in DisMax</li>
+<li>have some additional enhancements</li>
+</ul>
+<p>For better understanding, refer to the
+docs: <a href="https://solr.apache.org/guide/solr/latest/query-guide/edismax-query-parser.html">Extended DisMax (eDisMax) Query Parser</a></p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+<h2 id="__comments">Comments</h2>
+<!-- Insert generated snippet here -->
+<script src="https://giscus.app/client.js"
+        data-repo="rzarajczyk/rzarajczyk.github.io"
+        data-repo-id="R_kgDOGemcdA"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOGemcdM4CTeNI"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<!-- Synchronize Giscus theme with palette -->
+<script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    /* Set palette on initial load */
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate" ? "dark" : "light"
+      giscus.setAttribute("data-theme", theme)
+    }
+
+    /* Register event handlers after documented loaded */
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+          /* Instruct Giscus to change theme */
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+</script>
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020 - 2024 Rafał Zarajczyk - <a href="/no-warranties">no warranties given! - license</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+  
+    
+  
+
+
+
+
+  
+
+
+<h4>We're collecting traffic stats in 🍪 cookies</h4>
+<p><p>We're using Google Analytics for collecting traffic statistics.<br> If you want to know the details, check out this link: <a href="http://www.google.com/policies/technologies/types/" target="_blank">Cookies used by Google</a></p> <p>We're not using any other cookies.</p> <p>You can turn off Google Analytics cookie by disabling cookies in your browser: <a href="https://support.google.com/accounts/answer/61416?hl=en&co=GENIE.Platform%3DDesktop" target="_blank">How to disable cookies</a></p></p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="analytics" checked>
+          <span class="task-list-indicator"></span>
+          Google Analytics
+        </label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "content.code.annotate", "content.tabs.link"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="../extra.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": false, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
